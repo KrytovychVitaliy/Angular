@@ -39,7 +39,7 @@
     </button>
     <button
       type="button"
-      class="btn btn-success btn-block"
+      class="btn btn-warning btn-block"
       (click)="saveEditUser()"
       *ngIf="userService.editIndex === 0 || userService.editIndex > 0">
       Edit User
@@ -61,13 +61,13 @@
         <td>{{ user.password }}</td>
         <td>{{ user.email }}</td>
         <td>
-          <button class="btn btn-success btn-block" (click)="editUser(i)">
+          <button class="btn btn-warning btn-block" (click)="editUser(i)">
             Edit
           </button>
         </td>
         <td>
           <button
-            class="btn btn-success btn-block"
+            class="btn btn-danger btn-block"
             (click)="deleteUser(i)"
             [disabled]="userService.editIndex === 0 || userService.editIndex > 0">
             Delete
