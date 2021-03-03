@@ -1,0 +1,79 @@
+<main>
+  <form>
+    <div class="form-group">
+      <label for="userLogin">Login:</label>
+      <input
+        [(ngModel)]="userLogin"
+        name="userLogin"
+        type="text"
+        id="userLogin"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="userPass">Password:</label>
+      <input
+        [(ngModel)]="userPass"
+        name="userPass"
+        type="text"
+        id="userPass"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Email:</label>
+      <input
+        [(ngModel)]="userEmail"
+        name="userEmail"
+        type="text"
+        id="userEmail"
+        class="form-control"
+      />
+    </div>
+    <button
+      type="button"
+      class="btn btn-success btn-block"
+      (click)="addUser()"
+      *ngIf="userService.editIndex === null">
+      Add
+    </button>
+    <button
+      type="button"
+      class="btn btn-success btn-block"
+      (click)="saveEditUser()"
+      *ngIf="userService.editIndex === 0 || userService.editIndex > 0">
+      Edit User
+    </button>
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Login</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of arrUser; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-success btn-block" (click)="editUser(i)">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-success btn-block"
+            (click)="deleteUser(i)"
+            [disabled]="userService.editIndex === 0 || userService.editIndex > 0">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
