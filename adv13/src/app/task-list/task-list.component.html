@@ -1,0 +1,82 @@
+<div>
+  <form>
+    <div class="form-group">
+      <input
+        [(ngModel)]="task"
+        type="text"
+        placeholder="Enter task"
+        name="task"
+        class="form-control"
+      />
+      <button
+        type="button"
+        (click)="addTask()"
+        class="btn btn-success btn-block"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Task</th>
+      <th>Check</th>
+      <th>DONE/IN PROGRESS</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tasks of arrTasks; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ tasks.task }}</td>
+        <td>
+          <input
+            type="checkbox"
+            [checked]="tasks.taskStatus"
+            (click)="clickCheck(i)"
+          />
+        </td>
+        <td>
+          <span *ngIf="tasks.taskStatus" [style.color]="'green'">DONE</span>
+          <span *ngIf="!tasks.taskStatus" [style.color]="'red'"
+            >IN PROGRESS</span
+          >
+        </td>
+        <td>
+          <button class="btn btn-warning btnEdit" (click)="editTask(i)">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btnDelete"
+            (click)="deleteTask(i)"
+            [disabled]="
+              taskService.editIndex === 0 ||
+              taskService.editIndex > 0 ||
+              !tasks.taskStatus
+            "
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="editElement">
+        <td colspan="4" class="tdEdit">
+          <input
+            [(ngModel)]="editElement"
+            type="text"
+            name="editElement"
+            class="form-control inputEdit"
+          />
+        </td>
+        <td colspan="2">
+          <button class="btn btn-success btnSave" (click)="saveTask()">
+            Save
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

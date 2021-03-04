@@ -1,0 +1,48 @@
+.form-group {
+  display: flex;
+  flex-direction: row;
+  button {
+    margin-left: 20px;
+    width: 150px;
+  }
+}
+table {
+  table-layout: fixed;
+  tbody tr:hover {
+    background: var(--hover-background);
+  }
+  input[type="checkbox"] {
+    height: 14px;
+    width: 14px;
+    vertical-align: middle;
+    margin: 0 5px 5px 0;
+    border: 1px solid #a5a5a5;
+    background: var(--checkbox-background);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:checked,
+    &:checked:active {
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAMAAADXT/YiAAAAOVBMVEX///8zMzMqKipCQkI8PDwzMzNISEhISEhISEhCQkIqKio8PDwzMzMqKipISEhCQkI8PDwzMzMqKipFad0NAAAAE3RSTlMAIiIzMzNEZnd3qru7u8zMzMzMuKlnZwAAADhJREFUCNdjYIACJhjNJQRl8ApBWIw8goKsDDw8UAaDgAA3t4AAC1CGkx8ImMGKOPj42KAmsEMYAEUyAa2GdxXhAAAAAElFTkSuQmCC")
+        center no-repeat;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .btnEdit,
+  .btnSave {
+    width: 80px;
+  }
+  .btnDelete {
+    width: 100px;
+  }
+  .inputEdit{
+    display: inline-block;
+    max-width: 300px;
+  }
+  .tdEdit{
+    text-align: right;
+  }
+}
