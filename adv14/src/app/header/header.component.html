@@ -1,0 +1,14 @@
+<div class="d-flex align-items-start">
+  <div class="nav flex-row nav-pills me-3 works_home" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+    <div class="works">
+      <p>Last works >>></p>
+      <button class="nav-link" [routerLink]="[ 'works/task-list' ]" routerLinkActive="active">task-list</button>
+      <button class="nav-link" [routerLink]="[ 'works/users-list' ]" routerLinkActive="active">users-list</button>
+      <button class="nav-link" [routerLink]="[ 'works/word-filter' ]" routerLinkActive="active">word-filter</button>
+    </div>
+    <div class="home">
+      <p>Back to >>></p>
+      <button class="nav-link" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  width: max-content;
+  form {
+    align-self: flex-end;
+    min-width: 300px;
+    margin: 0 10px;
+  }
+  table {
+    align-self: flex-start;
+    min-width: 300px;
+    margin: 0 10px;
+  }
+}

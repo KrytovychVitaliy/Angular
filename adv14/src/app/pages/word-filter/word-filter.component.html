@@ -1,0 +1,27 @@
+<app-word-header></app-word-header>
+
+<div id="div_cenzor">
+  <p>
+    Bad words:
+    <span id="bad_words">
+      {{ badArr.join(", ") }}
+    </span>
+  </p>
+  <div id="div_input">
+    <input
+      type="text"
+      [placeholder]="inputEmpty ? 'Please write a word!' : 'word here...'"
+      [(ngModel)]="inpValue"
+      [class.inputEmpty]="inputEmpty"
+    />
+    <span id="span_add" (click)="clickAdd()">Add</span>
+    <span id="span_reset" (click)="clickReset()">Reset</span>
+  </div>
+  <textarea
+    rows="10"
+    [placeholder]="texAreaEmpty ? 'Please write a text!' : 'text here...'"
+    [(ngModel)]="textArea"
+    [class.inputEmpty]="texAreaEmpty"
+  ></textarea>
+  <div id="div_print" (click)="clickCenzor()">Cenzor</div>
+</div>
