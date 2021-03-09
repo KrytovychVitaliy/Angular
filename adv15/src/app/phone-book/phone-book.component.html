@@ -1,0 +1,44 @@
+<div class="div_all">
+  <div class="searchContact">
+    <input type="text" [(ngModel)]="searchContact" (keyup)="inputKeyup()">
+    <div class="button" (click)="addClick.emit()">Add phone</div>
+  </div>
+  <div class="my_table">
+    <table class="table">
+      <thead>
+        <th style="width: 30%;" (click)="sortFunc('firstName')">
+          <span>First name </span>
+          <span *ngIf='firstArrows !== ""'>
+            <img *ngIf='firstArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!firstArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 30%;" (click)="sortFunc('lastName')">
+          <span>Last name </span>
+          <span *ngIf='lastArrows !== ""'>
+            <img *ngIf='lastArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!lastArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 30%;" (click)="sortFunc('phoneNum')">
+          <span>Number </span>
+          <span *ngIf='phoneArrows !== ""'>
+            <img *ngIf='phoneArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!phoneArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 5%;">Edit</th>
+        <th style="width: 5%;">Delete</th>
+      </thead>
+      <tbody *ngIf="arrUser.length">
+        <tr *ngFor="let objTask of arrUser; let i = index">
+          <td>{{objTask.firstName | titlecase}}</td>
+          <td>{{objTask.lastName | titlecase}}</td>
+          <td>{{objTask.phoneNum}}</td>
+          <td><button class="editContact button" (click)="editContact(i)">Edit</button></td>
+          <td><button class="deleteContact button" (click)="deleteContact(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+.button {
+  width: 80px;
+  height: 38px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(164, 164, 165);
+  outline: none;
+  padding-left: 10px;
+}
+
+.div_all {
+  width: 100%;
+  margin-top: 50px;
+
+  .searchContact {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    input {
+      display: block;
+      width: 75%;
+    }
+
+    div {
+      background-color: green;
+      color: white;
+      width: 20%;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    min-width: 730px;
+
+    thead, tr {
+      border-top: 1px solid rgb(110, 110, 110);
+      border-bottom: 1px solid rgb(110, 110, 110);
+      height: 50px;
+
+      th,
+      td {
+        padding: 0 5px;
+      }
+      th {
+        text-align: left;
+        span {
+          line-height: 50px;
+        }
+        img {
+          vertical-align: middle;
+          width: 30px;
+        }
+      }
+    }
+    thead {
+      cursor: pointer;
+    }
+    tr:hover {
+      background-color: var(--hover-background);
+    }
+    .editContact {
+      background-color: rgb(233, 140, 19);
+      border: 1px solid rgb(233, 140, 19);
+
+      &:hover {
+        background-color: rgb(199, 118, 12);
+        animation-timing-function: linear;
+        animation-duration: 0.1s;
+      }
+
+      &:active {
+        animation-name: editTaskShadow;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+      }
+
+      @keyframes editTaskShadow {
+        0% {
+          box-shadow: 0 0 0 4px rgba(233, 140, 19, 0.5);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(233, 140, 19, 0.5);
+        }
+      }
+    }
+
+    .deleteContact {
+      background-color: rgb(187, 49, 102);
+      border: 1px solid rgb(187, 49, 102);
+      color: white;
+
+      &:hover {
+        background-color: rgb(133, 19, 62);
+        animation-timing-function: linear;
+        animation-duration: 0.1s;
+      }
+
+      &:active {
+        animation-name: deleteTaskShadow;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+      }
+
+      @keyframes deleteTaskShadow {
+        0% {
+          box-shadow: 0 0 0 4px rgba(206, 188, 195, 0.5);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(206, 188, 195, 0.5);
+        }
+      }
+    }
+  }
+}

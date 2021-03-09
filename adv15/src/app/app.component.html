@@ -1,0 +1,17 @@
+ <app-header></app-header>
+<app-user-modal
+  [passArr]="arrUser"
+  [add]="addBoolean"
+  [index]="indexEdit"
+  (clickX)="clickModalX($event)"
+  (clickAdd)="clickModalAdd($event)"
+  (clickEdit)="clickModalEdit($event)"
+></app-user-modal>
+<app-phone-book
+  [passArr]="arrUser"
+  [index55]="indexEdit"
+  (addClick)="addPhone($event)"
+  (editClick)="editPhone($event)"
+></app-phone-book>
+
+<router-outlet></router-outlet>

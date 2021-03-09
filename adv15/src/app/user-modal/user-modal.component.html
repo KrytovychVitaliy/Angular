@@ -1,0 +1,18 @@
+<div class="formContainer" *ngIf="add">
+  <div class="my_form">
+    <div class="h4X">
+      <h4 *ngIf="index > 0 || index === 0; else elseBlock">Edit phone</h4>
+      <ng-template #elseBlock>
+        <h4>Add phone</h4>
+      </ng-template>
+      <p (click)="closeX()">X</p>
+    </div>
+    <input type="text" placeholder="First name goes here" [(ngModel)]="firstNameInput" name="firstNameInput">
+    <input type="text" placeholder="Second name goes here" [(ngModel)]="lastNameInput" name="lastNameInput">
+    <input type="text" placeholder="Number phone goes here" [(ngModel)]="phoneNumInput" name="phoneNumInput">
+    <div class="containerSave">
+      <div *ngIf="index > 0 || index === 0" class="addContact button" (click)="editContact()">Save edit</div>
+      <div *ngIf="index !==0 && !index" class="addContact button" (click)="addContact()">Save add</div>
+    </div>
+  </div>
+</div>
