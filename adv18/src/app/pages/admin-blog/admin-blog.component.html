@@ -1,0 +1,49 @@
+<section>
+  <div class="d-flex align-items-start navv">
+    <div class="nav flex-column nav-pills" navv_div>
+      <button class="nav-link">Category</button>
+      <button class="nav-link">Products</button>
+      <button class="nav-link active">Blogs</button>
+    </div>
+  </div>
+  <div class="main">
+    <form class="form-group">
+      <input type="text" class="form-control" placeholder="title here..." [(ngModel)]="title" name="title">
+      <textarea rows="5" class="form-control" placeholder="text here..." [(ngModel)]="text" name="text"></textarea>
+      <input type="text" class="form-control" placeholder="author here..." [(ngModel)]="autor" name="autor">
+      <button type="button" class="btn btn-success btn-block" (click)="add()">{{ nameBut }}</button>
+    </form>
+    <table class="table">
+      <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody *ngIf="arrBlogs.length">
+        <tr *ngFor="let objBlog of arrBlogs; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ objBlog?.title }}</td>
+          <td>{{ objBlog?.text }}</td>
+          <td>{{ objBlog?.date | date:'MMM d, yyyy' }}</td>
+          <td>{{ objBlog?.user }}</td>
+          <td>
+            <button class="btn btn-warning btn-block" (click)="editUser(i, objBlog)">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-danger btn-block" (click)="deleteUser(objBlog.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+

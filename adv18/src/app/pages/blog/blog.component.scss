@@ -1,0 +1,19 @@
+.blogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  .container {
+    margin: 0;
+    width: 300px;
+    img {
+      width: 100%;
+    }
+    p{
+      color: blue;
+      .date{
+        margin-right: 10px;
+      }
+    }
+  }
+}

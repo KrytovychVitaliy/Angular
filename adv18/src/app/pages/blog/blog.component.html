@@ -1,0 +1,11 @@
+<div class="blogs" *ngIf="arrBlogs.length">
+    <div class="container" *ngFor="let objBlogs of arrBlogs">
+      <img src="../../../assets/pizza.jpg">
+      <p>
+        <span class="date">{{ objBlogs?.date | date:'MMM d, yyyy' }}</span>
+        <span>{{ objBlogs?.user }}</span>
+      </p>
+      <h3>{{ objBlogs?.title }}</h3>
+      <div>{{ objBlogs?.text }}</div>
+    </div>
+</div>
