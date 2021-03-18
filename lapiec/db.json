@@ -1,0 +1,29 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" },
+  "sales": [
+    {
+      "id": 1,
+      "name": "Sale 1",
+      "description": "some desk1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg"
+    },
+    {
+      "id": 2,
+      "description": "Sale 2",
+      "name": "some desk2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg"
+    },
+    {
+      "id": 3,
+      "description": "Sale 3",
+      "name": "some desk3",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg"
+    }
+  ]
+}
