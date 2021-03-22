@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "user": "user12",
+      "title": "title755",
+      "text": "tttttt",
+      "date": "2021-03-22T12:27:06.780Z",
+      "id": 1
+    },
+    {
+      "user": "user12",
+      "title": "title112",
+      "text": "tttttt",
+      "date": "2021-03-22T12:58:37.747Z",
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "nameUA": "Піца125"
+    },
+    {
+      "id": "2",
+      "nameUA": "Кава"
+    },
+    {
+      "id": "43c0fc4a-2596-4858-871b-3591a927d89b",
+      "nameUA": "deruy"
+    },
+    {
+      "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+      "nameUA": "Піцца"
+    }
+  ]
+}

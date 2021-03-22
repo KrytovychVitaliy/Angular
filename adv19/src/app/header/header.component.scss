@@ -1,0 +1,16 @@
+.header{
+  background: rgb(87, 87, 87);
+  h5{
+    color: rgb(240, 240, 240);
+    margin: auto 20px;
+  }
+  a{
+    color: rgb(200, 200, 200);
+    &:hover{
+      color: white;
+    }
+  }
+  .active{
+    background-color: rgb(125, 125, 125);
+  }
+}

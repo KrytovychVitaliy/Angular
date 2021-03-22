@@ -1,0 +1,10 @@
+<section>
+    <div class="d-flex align-items-start navv">
+      <div class="nav flex-column nav-pills">
+        <button class="nav-link" [routerLink]="[ '/admin/category' ]" routerLinkActive="active">Category</button>
+        <button class="nav-link">Products</button>
+        <button class="nav-link" [routerLink]="[ '/admin/blogs' ]" routerLinkActive="active">Blogs</button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </section>

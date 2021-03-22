@@ -1,0 +1,15 @@
+.category{
+    padding-left: 20px;
+    min-width: 600px;
+    .addCategory{
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    input{
+        margin: 20px 0;
+    }
+    button{
+        width: 100px;
+    }
+}
