@@ -1,0 +1,21 @@
+.product{
+    padding-left: 20px;
+    min-width: 600px;
+    .addProduct{
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    input{
+        margin: 20px 0;
+    }
+    button{
+        width: 100px;
+    }
+    img{
+        width: 100%;
+    }
+    .img{
+        width: 100px;
+    }
+}

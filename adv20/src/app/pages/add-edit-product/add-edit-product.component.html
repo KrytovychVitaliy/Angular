@@ -1,0 +1,38 @@
+<div class="outside" *ngIf="modalService.modalAddEditProd">
+    <div class="container">
+      <div class="modalHeader">
+        <h4 *ngIf="modalService.addProd">Modal Add</h4>
+        <h4 *ngIf="!modalService.addProd">Modal Edit</h4>
+        <p (click)="close()">X</p>
+      </div>
+
+      <div class="category">
+        <p>Category</p>
+        <select *ngIf="arrCategory?.length" [(ngModel)]="modalService.currentProduct.category.id">
+          <option value="">Input category...</option>
+          <option
+            *ngFor="let objCategory of arrCategory | filterCategory: searchCategory; let i = index"
+            [value]="objCategory.id"
+            >{{objCategory.nameUA}}
+          </option>
+        </select>
+      </div>
+      <div class="name">
+        <p>Name</p>
+        <input type="text" [(ngModel)]="modalService.currentProduct.nameUA" placeholder="Input new name...">
+      </div>
+      <div class="description">
+        <p>Description</p>
+        <input type="text" [(ngModel)]="modalService.currentProduct.description" placeholder="Input new description...">
+      </div>
+      <div class="price">
+        <p>Price</p>
+        <input type="number" [(ngModel)]="modalService.currentProduct.price" placeholder="Input new price...">
+      </div>     
+      <div class="butt">
+        <button type="button" class="btn btn-secondary btn-lg"  (click)="close()">Close</button>
+        <button type="button" class="btn btn-success btn-lg"  *ngIf="modalService.addProd" (click)="add()">Add</button>
+        <button type="button" class="btn btn-warning btn-lg"  *ngIf="!modalService.addProd" (click)="edit()">Edit</button>
+      </div>
+    </div>
+  </div>

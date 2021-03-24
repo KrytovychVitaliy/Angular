@@ -1,0 +1,15 @@
+<div class="outside" *ngIf="modalService.modalAddEdit">
+    <div class="container">
+      <div class="modalHeader">
+        <h4 *ngIf="modalService.add">Modal Add</h4>
+        <h4 *ngIf="!modalService.add">Modal Edit</h4>
+        <p (click)="close()">X</p>
+      </div>
+      <input type="text" [(ngModel)]="modalService.nameCategory" name="nameCategory" placeholder="Input new category...">
+      <div class="butt">
+        <div class="butt_close" (click)="close()">Close</div>
+        <button type="button" class="btn btn-success btn-block"  *ngIf="modalService.add" (click)="add()">Add</button>
+        <button type="button" class="btn btn-warning btn-block"  *ngIf="!modalService.add" (click)="edit()">Edit</button>
+      </div>
+    </div>
+  </div>

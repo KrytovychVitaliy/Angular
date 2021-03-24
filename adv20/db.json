@@ -1,0 +1,104 @@
+{
+  "posts": [
+    {
+      "user": "admin",
+      "title": "pizza",
+      "text": "Letta",
+      "date": "2021-03-22T12:27:06.780Z",
+      "id": 1
+    },
+    {
+      "user": "admin",
+      "title": "pizza",
+      "text": "La Piec",
+      "date": "2021-03-22T12:58:37.747Z",
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+      "nameUA": "pizza"
+    },
+    {
+      "id": "b7e8d80f-c3db-4fb4-bcc4-344b6c9e82a4",
+      "nameUA": "drink"
+    },
+    {
+      "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+      "nameUA": "tea"
+    },
+    {
+      "id": "33c573c0-f374-4fe8-aa39-0c254f71a0ab",
+      "nameUA": "dessert"
+    }
+  ],
+  "products": [
+    {
+      "id": "40a8d278-bbd4-48fb-a4fd-245fedfb8802",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "4 cheeses",
+      "description": "and hot sauce",
+      "price": 210,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    },
+    {
+      "id": "6472e799-1ef3-4fae-9970-6cb45443c345",
+      "category": {
+        "id": "b7e8d80f-c3db-4fb4-bcc4-344b6c9e82a4",
+        "nameUA": "drink"
+      },
+      "nameUA": "vodka",
+      "description": "0,5",
+      "price": 560,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    },
+    {
+      "id": "9eae178d-d96c-44b0-88c2-259f6f888918",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "Letta",
+      "description": "set",
+      "price": 480,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    },
+    {
+      "id": "46696b0f-6414-44ce-a60c-5b0ab7d0c69d",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "La Piec",
+      "description": "super",
+      "price": 180,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    },
+    {
+      "id": "6e207c59-1c6c-4151-9dbe-36a56c1435c1",
+      "category": {
+        "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+        "nameUA": "tea"
+      },
+      "nameUA": "Green tea",
+      "description": "large leaf",
+      "price": 50,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    },
+    {
+      "id": "360d8e74-363b-4d3f-a2d9-e4a68b788c99",
+      "category": {
+        "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+        "nameUA": "tea"
+      },
+      "nameUA": "Black tea",
+      "description": "large leaf",
+      "price": 50,
+      "image": "https://lh3.googleusercontent.com/-dx4wrj59oRc/XVgWfDbsM-I/AAAAAAAANSE/hnk7G6g8JRERmQHG094KsP5JjLXjf0ZOQCLIBGAYYCw/w1440-h810-k-no/"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<div class="category">
+  <form class="form-group">
+    <div class="addCategory">
+      <h4>Category</h4>
+      <button type="button" class="btn btn-success btn-block" (click)="addCategory()">
+        Add
+      </button>
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="filter category..."
+      [(ngModel)]="searchCategory"
+      name="searchCategory"
+    />
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody *ngIf="arrCategory.length">
+      <tr *ngFor="let objCategory of arrCategory | filterCategory: searchCategory; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ objCategory.nameUA }}</td>
+        <td>
+          <button
+            class="btn btn-warning btn-block"
+            (click)="editCategory(objCategory.id, objCategory.nameUA)"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-block"
+            (click)="deleteCategory(objCategory.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-add-edit-category (addClick)="getCategory()"></app-add-edit-category>
+<app-delete-category (addClick)="getCategory()"></app-delete-category>

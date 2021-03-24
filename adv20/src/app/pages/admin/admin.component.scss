@@ -1,0 +1,23 @@
+section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    .navv{
+      padding: 0 20px;
+      button{
+        width: 150px;
+        text-align: left;
+        border: none;
+        background-color: #fff;
+        &:hover{
+          background-color: rgb(170, 170, 170);
+          color: white;
+        }
+      }
+      .active{
+        background-color: rgb(87, 87, 87);
+        color: rgb(200, 200, 200);
+      }
+    }
+  }
