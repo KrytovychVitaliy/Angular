@@ -1,0 +1,61 @@
+<div class="product">
+  <form class="form-group">
+    <div class="addProduct">
+      <h4>Product</h4>
+      <button
+        type="button"
+        class="btn btn-success btn-block"
+        (click)="addProduct()"
+      >
+        Add
+      </button>
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="filter product..."
+      [(ngModel)]="searchProduct"
+      name="searchProduct"
+    />
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody *ngIf="arrProduct.length">
+      <tr *ngFor="let objProduct of arrProduct| filterCategory: searchProduct; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ objProduct.category.nameUA }}</td>
+        <td>{{ objProduct.nameUA }}</td>
+        <td>{{ objProduct.description }}</td>
+        <td>{{ objProduct.price }}</td>
+        <td class="img"><img [src]="objProduct.image"/></td>
+        <td>
+          <button
+            class="btn btn-warning btn-block"
+            (click)="editProduct(objProduct.id, objProduct)"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-block"
+            (click)="deleteProduct(objProduct.id, objProduct.image)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-add-edit-product (addClick)="getProduct()"></app-add-edit-product>
+<app-delete-category (addClick)="getProduct()"></app-delete-category>

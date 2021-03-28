@@ -1,0 +1,49 @@
+        <div class="custom-file mb-3" (click)="progressActivate()">
+          <label for="formFile" class="custom-file-label" *ngIf="!productImage">file input...</label>
+          <label for="formFile" class="custom-file-label"
+          *ngIf="productImage"
+          [style.color]="'rgb(250, 211, 104)'"
+          >file download complete...</label>
+          <input (change)="uploadFile($event)" class="custom-file-input" type="file" id="formFile">
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar progress-bar-striped bg-warning"
+          [style.width]="progressActive ? ((uploadProgress | async) + '%') : 0"
+          [style.opacity]="progressActive ? 1 : 0"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"></div>
+        </div> 
+
+
+
+
+
+
+
+  <div class="custom-file mb-3" >
+  <label for="formFile" class="custom-file-label" *ngIf="!progressActive"
+    >file input...</label
+  >
+  <label
+    for="formFile" class="custom-file-label" *ngIf="progressActive"
+    [style.color]="'rgb(250, 211, 104)'"
+    >file download complete...</label
+  >
+  <input
+    (change)="uploadFile($event)"
+    class="custom-file-input"
+    type="file"
+    id="formFile"
+  />
+</div>
+
+<div class="progress mb-3">
+  <div
+    class="progress-bar progress-bar-striped bg-warning"
+    [style.width]="(uploadProgress | async) + '%'"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  ></div>
+</div>

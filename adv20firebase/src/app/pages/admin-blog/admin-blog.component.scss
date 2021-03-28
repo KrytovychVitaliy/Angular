@@ -1,0 +1,25 @@
+  .main{
+    padding: 10px 20px;
+    form{
+      button{
+        width: 150px;
+        margin: 0 auto;
+      }
+      input, textarea{
+        display: block;
+        padding-left: 10px;
+        width: 100%;
+        margin: 10px 0;
+      }
+      textarea{
+        resize: none;
+      }
+    }
+    label{
+      color: rgb(120, 120, 120);
+    }
+    .custom-file-label::after{
+      background-color: rgb(250, 211, 104);
+      color: black;
+    }
+  }

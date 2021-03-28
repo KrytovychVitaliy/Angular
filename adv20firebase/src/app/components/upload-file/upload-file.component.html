@@ -1,0 +1,20 @@
+<div class="custom-file mb-3" (click) = progressActivate()>
+  <label for="formFile" class="custom-file-label" *ngIf="!uploadFileService.productImage">file input...</label>
+  <label for="formFile" class="custom-file-label" *ngIf="uploadFileService.productImage"
+  [style.color]="'rgb(250, 211, 104)'"
+  >file download complete...</label>
+  <input (change)="uploadFile($event)" class="custom-file-input" type="file" id="formFile">
+</div>
+
+<div class="progress mb-3">
+  <div class="progress-bar progress-bar-striped bg-warning"
+  [style.width]="uploadFileService.progressActive ? ((uploadProgress | async) + '%') : 0"
+  [style.opacity]="uploadFileService.progressActive ? 1 : 0"
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"></div>
+</div>
+
+<div class="img  mb-3" *ngIf="uploadFileService.productImage">
+  <img [src]="uploadFileService.productImage">
+</div>

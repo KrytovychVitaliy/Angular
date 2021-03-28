@@ -1,0 +1,129 @@
+{
+  "posts": [
+    {
+      "autor": "admin",
+      "title": "pizza",
+      "text": "Letta",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesBlogs%2Fa08c4c5e-1502-4bcb-9dc4-a88a60100072.jpeg?alt=media&token=8c92a035-26c3-4192-9d09-41134934d99a",
+      "id": "ec1fe809-d8eb-4fe2-8fa8-73f37484ef7d",
+      "date": "2021-03-28T18:15:49.913Z"
+    },
+    {
+      "autor": "admin",
+      "title": "pizza",
+      "text": "La Piec",
+      "date": "2021-03-28T18:05:04.974Z",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesBlogs%2Fd587297d-a806-4793-a050-c6d45ff26639.jpeg?alt=media&token=b872fb1c-bd7d-4a2c-b4d0-d5e591c2afd1",
+      "id": "a1a26df7-2e20-4447-98a2-c772415bf035"
+    },
+    {
+      "autor": "admin",
+      "title": "pizza",
+      "text": "Proshuto",
+      "date": "2021-03-28T18:26:42.219Z",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesBlogs%2Ff763a7c6-55c4-44c4-815a-952bdcb54189.jpeg?alt=media&token=15ed6685-6008-4988-97c6-812b47ed4d50",
+      "id": "536a5d4d-89eb-4d1f-ac6e-de52f8fd939e"
+    }
+  ],
+  "category": [
+    {
+      "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+      "nameUA": "pizza"
+    },
+    {
+      "id": "b7e8d80f-c3db-4fb4-bcc4-344b6c9e82a4",
+      "nameUA": "drink"
+    },
+    {
+      "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+      "nameUA": "tea"
+    },
+    {
+      "id": "33c573c0-f374-4fe8-aa39-0c254f71a0ab",
+      "nameUA": "dessert"
+    },
+    {
+      "id": "a6570255-1877-4da5-9c44-4f2b66100d58",
+      "nameUA": "salad"
+    }
+  ],
+  "products": [
+    {
+      "id": "40a8d278-bbd4-48fb-a4fd-245fedfb8802",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "4 cheeses",
+      "description": "and hot sauce",
+      "price": 210,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2F8df9f210-d52a-42e4-88b3-9a59fdc7b8f6.jpeg?alt=media&token=1f4203eb-4840-485b-9db3-fec138b1f855"
+    },
+    {
+      "id": "9eae178d-d96c-44b0-88c2-259f6f888918",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "Letta",
+      "description": "set",
+      "price": 480,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2Fc74be26d-27b8-4a72-8dc8-77248f31f8a6.jpeg?alt=media&token=ecaa1436-afa1-4848-bac2-48ddf0d6e336"
+    },
+    {
+      "id": "46696b0f-6414-44ce-a60c-5b0ab7d0c69d",
+      "category": {
+        "id": "6cf76a2c-2d5e-4278-993a-026679dc65e6",
+        "nameUA": "pizza"
+      },
+      "nameUA": "La Piec",
+      "description": "super",
+      "price": 180,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2Fc0f54e42-0d05-4966-93bc-212423ba612f.jpeg?alt=media&token=68e911d0-1910-4631-84a6-b58c8176a6de"
+    },
+    {
+      "id": "6e207c59-1c6c-4151-9dbe-36a56c1435c1",
+      "category": {
+        "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+        "nameUA": "tea"
+      },
+      "nameUA": "Green tea",
+      "description": "large leaf",
+      "price": 50,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2Fe7f34f3d-6db2-46a4-bab8-7a257c66b4d6.png?alt=media&token=f00c24c9-eb91-42c0-b913-3348071ae7d9"
+    },
+    {
+      "id": "360d8e74-363b-4d3f-a2d9-e4a68b788c99",
+      "category": {
+        "id": "77156ab5-1d5c-4166-b753-bf5ccfc14d34",
+        "nameUA": "tea"
+      },
+      "nameUA": "Black tea",
+      "description": "large leaf",
+      "price": 50,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2Fc106f746-8ffe-4e50-ab29-2e5bd457ba60.jpeg?alt=media&token=881d8c7d-52b4-4f6a-9cc7-58a4eb54d46f"
+    },
+    {
+      "id": "ecdc45c3-6df9-4a79-9ff0-fdc7dee63f1b",
+      "category": {
+        "id": "a6570255-1877-4da5-9c44-4f2b66100d58",
+        "nameUA": "salad"
+      },
+      "nameUA": "Caesar",
+      "description": "not vegan",
+      "price": 80,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2F9dcb2327-1b04-467a-8ad4-2f6341713718.jpeg?alt=media&token=d475f728-1c59-4df7-9b84-fc5e2a48ded5"
+    },
+    {
+      "id": "ad0162da-78a5-45d0-81c6-e3259e9fff17",
+      "category": {
+        "id": "b7e8d80f-c3db-4fb4-bcc4-344b6c9e82a4",
+        "nameUA": "drink"
+      },
+      "nameUA": "Vodka",
+      "description": "Absolut",
+      "price": 560,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizza-e8b27.appspot.com/o/imagesProducts%2F0b2d9cf7-de12-4f06-9764-c3ba014ddcf1.jpeg?alt=media&token=d48665da-072a-4af2-a9e2-37d6482711a0"
+    }
+  ]
+}
