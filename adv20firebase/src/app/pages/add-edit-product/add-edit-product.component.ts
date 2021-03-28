@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { ICategory } from "src/app/interfaces/category.interface";
-import { IProduct } from "src/app/interfaces/product.interface";
 import { CategoryService } from "src/app/services/category.service";
 import { ModalService } from "src/app/services/modal.service";
 import { ProductService } from "src/app/services/product.service";
@@ -15,7 +14,6 @@ import { Uuidv4Service } from "src/app/services/uuidv4.service";
 export class AddEditProductComponent implements OnInit {
   @Output() addClick = new EventEmitter();
   arrCategory: Array<ICategory>;
-  arrProducts: Array<IProduct>;
 
   constructor(
     public modalService: ModalService,

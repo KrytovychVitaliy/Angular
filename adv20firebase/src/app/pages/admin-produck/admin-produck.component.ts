@@ -37,8 +37,8 @@ export class AdminProduckComponent implements OnInit {
     this.modalService.modalAddEditProd = true;
     this.modalService.addProd = false;
     this.modalService.editIndexProduct = id;
-
-    this.modalService.currentProduct = product;
+    this.modalService.currentProduct = {...product};
+    
     this.uploadFileService.productImage = this.modalService.currentProduct.image;
   }
 
