@@ -1,0 +1,14 @@
+label {
+  color: rgb(120, 120, 120);
+}
+.custom-file-label::after {
+  background-color: rgb(3, 201, 3);
+  color: black;
+}
+.img {
+  width: 100px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}

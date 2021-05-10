@@ -1,0 +1,46 @@
+.product {
+  max-width: max-content;
+  .addProduct {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 150px;
+    }
+  }
+
+  .categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    button:not(.all) {
+      min-width: 150px;
+    }
+    .oneCategory {
+      margin: 0.8rem 0.8rem;
+    }
+    .all {
+      width: 70px;
+    }
+    .activeCategory {
+      background-color: var(--body-background);
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  input {
+    margin: 20px 0;
+  }
+
+  .img {
+    max-width: 100px;
+    max-height: 100px;
+    img {
+      width: 100%;
+    }
+  }
+
+  table{
+    width: 800px;
+  }
+}

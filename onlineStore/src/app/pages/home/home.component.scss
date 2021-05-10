@@ -1,0 +1,14 @@
+section{
+  .main{
+    p{
+      max-width: 650px;
+      margin: 0 auto;
+      margin-top: 50px;
+      text-align: center;
+      .name{
+        font-weight: bolder;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,73 @@
+main{
+  margin-left: 50px;
+  .mainProduct{
+    .breadcrumb {
+      padding-left: 0;
+      background-color: transparent;
+      li {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 17px;
+        -webkit-transition: color .250s linear;
+        -o-transition: color .250s linear;
+        transition: color .250s linear;
+      }
+      li:hover a {
+        color: #c80000;
+      }
+    }
+    .productDetail{
+      display: flex;
+      .img{
+        width: 400px;
+        img{
+          width: 100%;
+        }
+      }
+      .info{
+        max-width: 300px;
+        margin: 0 10px;
+        .productCountWrapper{
+          input{
+            text-align: center;
+            margin: 0 0.8rem;
+            width: 3rem;
+          }
+          span{
+            cursor: pointer;
+            padding: 5px;
+          }
+        }
+        .btn{
+          margin: 0.8rem 0;
+        }
+      }
+    }
+  }
+  .createComment{ //створення коментаря
+    display: flex;
+    flex-direction: column;
+    textarea {
+      resize: none;
+      width: 400px;
+      padding-left: 10px;
+    }
+    .btn{
+      width: 200px;
+      margin: 0.8rem 0;
+    }
+    .commentMessage{
+      color: red;
+    }
+  }
+  .blockedUser{
+    margin: 50px 0;
+    color: red;
+  }
+  h5{
+    margin: 20px 50px;
+  }
+}
+
+

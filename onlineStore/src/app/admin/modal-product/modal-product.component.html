@@ -1,0 +1,103 @@
+<div class="outside">
+  <form #myForm=ngForm class="containerIN">
+    <div class="modalHeader">
+      <h4 *ngIf = "addOrEdit">Add Product</h4>
+      <h4 *ngIf = "!addOrEdit">Edit Product</h4>
+      <p (click)="close()">X</p>
+    </div>
+
+    <div class="form-group" *ngIf="arrCategories?.length" >
+      <label for="category">Category</label>
+      <select id="category"
+        required
+        name="category" #category="ngModel"
+        class="form-control"
+        [(ngModel)]="categoryProduct"
+        >
+        <option value="">Input category...</option>
+        <option
+          *ngFor="let objCategory of arrCategories; let i = index"
+          [value]="objCategory[0]"
+          >{{objCategory[1].nameUA}}
+        </option>
+      </select>
+      <div [hidden]="category.valid || category.untouched"
+        class="alert alert-danger">
+        The "Category" field must be filled
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nameEN">Name EN</label>
+      <input
+        required
+        [(ngModel)]="currentProduct.nameEN"
+        name="en" #en="ngModel"
+        type="text" class="form-control" id="nameEN"
+        placeholder="Input new name EN..."
+        >
+      <div [hidden]="en.valid || en.untouched"
+        class="alert alert-danger">
+        The "Name EN" field must be filled
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nameUA">Name UA</label>
+      <input
+        required
+        [(ngModel)]="currentProduct.nameUA"
+        name="ua" #ua="ngModel"
+        type="text" class="form-control" id="nameUA"
+        placeholder="Input new name UA...">
+      <div [hidden]="ua.valid || ua.untouched" class="alert alert-danger">
+        The "Name UA" field must be filled
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        required
+        [(ngModel)]="currentProduct.description"
+        name="description" #description="ngModel"
+        class="form-control"
+        cols="30" rows="4" id="description"
+        placeholder="Input new description..."
+      ></textarea>
+      <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
+        The "Description" field must be filled
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        required
+        [(ngModel)]="currentProduct.price"
+        name="price" #price="ngModel"
+        type="number" class="form-control" id="price"
+        placeholder="Input new price...">
+      <div [hidden]="price.valid || price.untouched" class="alert alert-danger">
+        The "Price" field must be filled
+      </div>
+    </div>
+
+    <div class="inTop">
+      <p>Top</p>
+      <input type="checkbox" [(ngModel)]="currentProduct.inTop" name="inTop">
+    </div>
+    <hr>
+
+    <div id="uploadProducts">
+      <p>Upload img</p>
+      <app-upload></app-upload>
+    </div>
+
+    <div class="butt">
+      <button type="button" (click)="close()" class="btn btn-outline-secondary btn-block">Close</button>
+      <button type="button" (click)="add(myForm)" class="btn btn-success btn-block" *ngIf = "addOrEdit">Add</button>
+      <button type="button" (click)="edit(myForm)" class="btn btn-warning btn-block" *ngIf = "!addOrEdit">Edit</button>
+    </div>
+  </form>
+</div>

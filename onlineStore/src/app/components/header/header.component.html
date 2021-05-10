@@ -1,1 +1,21 @@
-<p>header works!</p>
+<nav class="navbar navbar-light header">
+  <div class="d-flex align-items-start">
+    <div class="nav flex-row nav-pills" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+      <h3 [routerLink]="[ '/home' ]">Online Store</h3>
+      <a class="nav-link" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
+      <a class="nav-link" [routerLink]="[ '/products' ]" routerLinkActive="active">Products</a>
+      <a  class="nav-link basketPrice" [routerLink]="[ '/basket' ]" routerLinkActive="active">
+        <img src="https://www.lapiec-pizza.com.ua/wp-content/themes/lapiec/fonts/svg-icons/shopping-cart.svg" alt="shopping-cart">
+        <span>
+          <i>{{totalPrice}} грн.</i>
+        </span>
+      </a>
+      <a class="nav-link" [routerLink]="[ '/checkIn' ]" routerLinkActive="active" *ngIf="!activeUser && check">Check in</a>
+      <a class="nav-link" [routerLink]="[ '/signIn' ]" routerLinkActive="active" *ngIf="!activeUser && !check">Sign in</a>
+      <a class="nav-link" [routerLink]="[ '/signOut' ]" routerLinkActive="active" *ngIf="activeUser">Sign out</a>
+      <a class="nav-link user" [routerLink]="[ '/users' ]" routerLinkActive="active" *ngIf="activeUser">{{activeUser[1].name}}</a>
+      <a class="nav-link" [routerLink]="[ '/admin' ]" routerLinkActive="active" *ngIf="activeUser && adminEmail === activeUser[1].email">Admin</a>
+    </div>
+  </div>
+</nav>
+

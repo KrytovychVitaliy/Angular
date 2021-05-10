@@ -1,0 +1,22 @@
+<section>
+  <div class="data" *ngIf="!changeData">
+    <div class="dataUser">
+      <p><span class="nameData">Name:</span><span>{{userLocal[1].name}}</span></p>
+      <p><span class="nameData">Email:</span><span>{{userLocal[1].email}}</span></p>
+      <p><span class="nameData">Password:</span><span>{{userLocal[1].password}}</span></p>
+      <p><span class="nameData">Phone:</span><span>{{userLocal[1].phone}}</span></p>
+      <p><span class="nameData">City:</span><span>{{userLocal[1].city}}</span></p>
+      <p><span class="nameData">Street:</span><span>{{userLocal[1].street}}</span></p>
+      <p><span class="nameData">House:</span><span>{{userLocal[1].house}}</span></p>
+    </div>
+  </div>
+
+  <div class="button" *ngIf="!changeData">
+    <button (click)="changeDataUser()" type="button" class="btn btn-success">Change data</button>
+  </div>
+
+  <div class="changeData" *ngIf="changeData">
+    <app-sign-in></app-sign-in>
+  </div>
+</section>
+

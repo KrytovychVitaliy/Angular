@@ -1,0 +1,92 @@
+<div class="container">
+  <form #myForm=ngForm class="containerIN">
+    <h4 *ngIf = "!changeDataUser">Форма реєстрації</h4>
+    <h4 *ngIf = "changeDataUser">Змінити дані:</h4>
+    <div class="form-group">
+      <label for="userName">Name</label>
+      <input
+        required
+        [(ngModel)]="user.name"
+        name="name"
+        #name="ngModel"
+        type="text" class="form-control" id="userName">
+      <div [hidden]="name.valid || name.untouched" class="alert alert-danger">The "Name" field must be filled</div>
+    </div>
+
+    <div class="form-group">
+      <label for="userPhone">Phone</label>
+      <input
+        required
+        [(ngModel)]="user.phone"
+        name="phone"
+        #phone="ngModel"
+        type="text" class="form-control" id="userPhone">
+      <div [hidden]="phone.valid || phone.untouched" class="alert alert-danger">The "Phone" field must be filled</div>
+    </div>
+
+    <div class="form-group">
+      <label for="userSity">City</label>
+      <input
+        required
+        [(ngModel)]="user.city"
+        name="city"
+        #city="ngModel"
+        type="text" class="form-control" id="userSity">
+      <div [hidden]="city.valid || city.untouched" class="alert alert-danger">The "City" field must be filled</div>
+    </div>
+
+    <div class="form-group">
+      <label for="userStreet">Street</label>
+      <input
+        required
+        [(ngModel)]="user.street"
+        name="street"
+        #street="ngModel"
+        type="text" class="form-control" id="userStreet">
+      <div [hidden]="street.valid || street.untouched" class="alert alert-danger">The "Street" field must be filled</div>
+    </div>
+
+    <div class="form-group">
+      <label for="userHouse">House</label>
+      <input
+        required
+        [(ngModel)]="user.house"
+        name="house"
+        #house="ngModel"
+        type="text" class="form-control" id="userHouse">
+      <div [hidden]="house.valid || house.untouched" class="alert alert-danger">The "House" field must be filled</div>
+    </div>
+
+    <div class="form-group">
+        <label for="userEmail">Email</label>
+        <input
+          required
+          pattern="^[a-zA-Z0-9_\.\-]{1,15}@[a-zA-Z]{1,6}\.[a-zA-Z]{2,6}$"
+          [(ngModel)]="user.email"
+          name="email"
+          #email="ngModel"
+          type="text" class="form-control" id="userEmail">
+        <div [hidden]="email.valid || email.untouched" class="alert alert-danger">Email incorrect</div>
+        <p class="erorEmail" *ngIf="erorEmail">Помилка. Користувач із таким email вже зареєстрований.</p>
+    </div>
+
+      <div class="form-group">
+          <label for="userPassword">Password</label>
+          <input
+            required
+            [(ngModel)]="user.password"
+            name="password"
+            #password="ngModel"
+            type="text" class="form-control" id="userPassword">
+          <div [hidden]="password.valid || password.untouched" class="alert alert-danger">Password incorrect</div>
+      </div>
+      <div class="buttons" *ngIf = "!changeDataUser">
+        <button (click)="addUser(myForm)" type="button" class="btn btn-success">Зареєструватися</button>
+        <button (click)="toCheckIn(myForm)" type="button" class="btn btn-danger">Увійти</button>
+      </div>
+      <div class="buttons" *ngIf = "changeDataUser">
+        <button (click)="editUser(myForm)" type="button" class="btn btn-success">Змінити</button>
+      </div>
+
+  </form>
+</div>

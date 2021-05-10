@@ -1,0 +1,10 @@
+<section class="sectionLeftUser">
+  <div class="d-flex align-items-start navv">
+    <div class="nav flex-column nav-pills">
+      <button class="nav-link" [routerLink]="[ '/users/orders' ]" routerLinkActive="active">Orders</button>
+      <button class="nav-link" [routerLink]="[ '/users/comments' ]" routerLinkActive="active">Comments</button>
+      <button class="nav-link" [routerLink]="[ '/users/data' ]" routerLinkActive="active">Data</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</section>

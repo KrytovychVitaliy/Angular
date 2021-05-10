@@ -1,0 +1,23 @@
+.header{
+  height: 70px;
+  background-color: var(--header-background);
+  h3{
+    cursor: pointer;
+    margin: 0 50px 0 50px;
+  }
+  .basketPrice{
+    img{
+      width: 1.2rem;
+      margin-right: 2px;
+    }
+  }
+  .user{
+    font-style: italic;
+    font-weight: bold;
+    border: 1px solid rgb(0, 153, 255);
+    margin: 0 5px;
+  }
+}
+
+
+

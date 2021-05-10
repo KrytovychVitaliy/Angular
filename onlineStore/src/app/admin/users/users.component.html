@@ -1,0 +1,37 @@
+<div class="users">
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Block</th>
+      <th>Delete</th>
+    </thead>
+    <tbody *ngIf="arrUsers.length">
+      <tr *ngFor="let oneUser of arrUsers | filterCategory: searchCategory; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ oneUser[1].name }}</td>
+        <td>{{ oneUser[1].email }}</td>
+        <td>{{ oneUser[1].phone }}</td>
+        <td>
+          city: {{ oneUser[1].city }} <br>
+          street: {{ oneUser[1].street }} <br>
+          house: {{ oneUser[1].house }}
+        </td>
+        <td>
+          <button *ngIf="!oneUser[1].block" class="btn btn-warning btn-block" (click)="blockUser(oneUser)">to block</button>
+          <button *ngIf="oneUser[1].block" class="btn btn-danger btn-block" (click)="unblockUser(oneUser)">unblock</button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-block"
+            (click)="deleteUser(oneUser)"
+          >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-modal-delete (addClick)="getUsers()"></app-modal-delete>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantsService } from 'src/app/shared/services/constants.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  data = null;
 
-  constructor() { }
+  constructor(
+    private constantsService: ConstantsService
+  ) { }
 
   ngOnInit(): void {
+    this.data = this.constantsService.companyDetails;
   }
+
 
 }

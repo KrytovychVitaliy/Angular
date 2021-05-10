@@ -1,0 +1,34 @@
+<section>
+  <div class="orders" *ngIf="arrOrders && arrOrders.length > 0">
+    <div class="table" *ngFor="let order of arrOrders; let ind = index">
+      <table>
+        <thead>
+          <th>#</th>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Count</th>
+          <th>Sum</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of order[1].product; let i = index; let length = count">
+            <td>{{ i + 1 }}</td>
+            <td class="img"><img [src]="product[1].image"/></td>
+            <td>{{ product[1].nameUA }}</td>
+            <td>{{ product[1].price }} грн.</td>
+            <td>{{ product[1].count }}</td>
+            <td>{{ product[1].count * product[1].price }} грн.</td>
+          </tr>
+          <tr class="info">
+            <td colspan="2">order №{{ ind + 1 }}</td>
+            <td colspan="2">date: {{ order[1].date | date:'yyyy-MM-dd'}}</td>
+            <td colspan="2">Total: {{ order[1].total }} грн.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="noOrders" *ngIf="!arrOrders">
+    <h5>Ще немає здійснених покупок</h5>
+  </div>
+</section>

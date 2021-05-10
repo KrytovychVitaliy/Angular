@@ -1,0 +1,40 @@
+<section>
+  <div class="comments" *ngIf="arrComments && arrComments.length > 0">
+    <table class="table">
+      <thead>
+        <th>#</th>
+        <th>Comment</th>
+        <th>Name product</th>
+        <th>Date</th>
+        <th>Autor</th>
+        <th>To moderate</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of arrComments; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ comment[1].text }}</td>
+          <td>{{ comment[1].product.nameEN }}</td>
+          <td>{{ comment[1].date | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+          <td>{{ comment[1].autor[1].name }}</td>
+          <td>
+            <button
+              class="btn btn-warning btn-block"
+              (click)="moderateComment(comment)"
+            >Moderate</button>
+          </td>
+          <td>
+            <button
+              class="btn btn-danger btn-block"
+              (click)="deleteComment(comment)"
+            >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="noComments" *ngIf="!arrComments">
+    <h5>Немає непромодерованих коментарів</h5>
+  </div>
+</section>
+

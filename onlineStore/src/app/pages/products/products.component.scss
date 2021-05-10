@@ -1,0 +1,83 @@
+main{
+  max-width: 900px;
+
+    .categoriesList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    button{
+      min-width: 150px;
+    }
+    .oneCategory{
+      margin: 0.8rem 0.8rem;
+    }
+    .activeCategory{
+      background-color: var(--body-background);
+      color: rgb(0, 0, 0);
+    }
+  }
+  .productsList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .oneProduct{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      width: 250px;
+      margin: 0.8rem;
+      border: 1px solid rgb(212, 212, 212);
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: var(--card-background);
+      h5{
+        margin: 20px 0;
+      }
+      p{
+        padding: 0 10px;
+        text-align: justify;
+      }
+      .pPrice{
+        text-align: center;
+        margin: 20px 0;
+        .spanPrice{
+          font-weight: bolder;
+        }
+      }
+      img{
+        width: 100%;
+        margin-bottom: 0.8rem;
+      }
+      .productCountWrapper{
+        text-align: center;
+        input{
+          text-align: center;
+          margin: 0 0.8rem;
+          width: 3rem;
+        }
+        span{
+          cursor: pointer;
+          padding: 5px;
+        }
+      }
+      .btn{
+        margin: 0.8rem 0;
+        width: 150px;
+        align-self: center;
+      }
+      .clickDetails{
+        cursor: pointer;
+      }
+    }
+  }
+  .noProducts{
+    h5{
+      margin: 20px 50px;
+    }
+  }
+  .pagination{
+    margin: 20px 0 20px 50px;
+  }
+}

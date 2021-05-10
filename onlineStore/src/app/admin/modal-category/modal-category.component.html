@@ -1,0 +1,44 @@
+<div class="outside">
+  <form #myForm=ngForm class="containerIN">
+    <div class="modalHeader">
+      <h4 *ngIf = "addOrEdit">Add Category</h4>
+      <h4 *ngIf = "!addOrEdit">Edit Category</h4>
+      <p (click)="close()">X</p>
+    </div>
+
+    <div class="form-group">
+      <label for="nameCategoryEN">Category EN</label>
+      <input
+        required
+        name="en" #en="ngModel"
+        [(ngModel)]="nameCategoryEN"
+        type="text" class="form-control" id="nameCategoryEN"
+        placeholder="Input new category EN..."
+        >
+      <div [hidden]="en.valid || en.untouched"
+        class="alert alert-danger">
+        The "Category EN" field must be filled
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nameCategoryUA">Category UA</label>
+      <input
+        required
+        [(ngModel)]="nameCategoryUA"
+        name="ua" #ua="ngModel"
+        type="text" class="form-control" id="nameCategoryUA"
+        placeholder="Input new category UA...">
+      <div [hidden]="ua.valid || ua.untouched" class="alert alert-danger">
+        The "Category UA" field must be filled
+      </div>
+    </div>
+
+    <div class="butt">
+      <button type="button" (click)="close()" class="btn btn-outline-secondary btn-block">Close</button>
+      <button type="button" (click)="add(myForm)" class="btn btn-success btn-block" *ngIf = "addOrEdit">Add</button>
+      <button type="button" (click)="edit(myForm)" class="btn btn-warning btn-block" *ngIf = "!addOrEdit">Edit</button>
+    </div>
+  </form>
+</div>
+

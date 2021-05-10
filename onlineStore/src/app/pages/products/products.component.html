@@ -1,0 +1,44 @@
+<main>
+  <section class="categoriesList"  *ngIf="arrCategories">
+    <button type="button" class="btn btn-primary oneCategory"
+          *ngFor="let oneCategory of arrCategories; let i = index"
+          [class.activeCategory] = "activeCategory && oneCategory[1].nameUA === activeCategory[1].nameUA"
+          (click)=clickCategory(oneCategory)>
+      {{ oneCategory[1].nameUA }}
+    </button>
+  </section>
+
+  <div class="carrousel">
+    <app-carrousel></app-carrousel>
+  </div>
+
+  <section class="productsList" *ngIf="arrCurrentProducts">
+    <div class="oneProduct" *ngFor="let product of returnedArray; let i = index">
+      <div class="clickDetails" (click)="openDetails(product)"><img [src]="product[1].image"/></div>
+      <h5 class="clickDetails" (click)="openDetails(product)">{{product[1].nameUA}}</h5>
+      <p>{{product[1].description}}</p>
+      <p class="pPrice"><span class="spanPrice">{{product[1].price}}</span><span class="spanValuta"> грн.</span></p>
+      <div class="productCountWrapper">
+        <span (click)="productCounter(product, false)" class="productCount">-</span>
+        <input type="text" [value]="product[1].count">
+        <span (click)="productCounter(product, true)" class="productCount">+</span>
+      </div>
+      <button (click)="addToBasket(product)" class="btn btn-success">Замовити</button>
+    </div>
+
+  </section>
+
+  <div class="noProducts" *ngIf="!arrCurrentProducts">
+    <h5>У вибраній категорії ще немає продуктів</h5>
+  </div>
+
+  <div class="pagination" *ngIf="arrCurrentProducts.length > paginationQuantity">
+    <pagination
+      [totalItems]="arrCurrentProducts.length"
+      [itemsPerPage]="paginationQuantity"
+      (pageChanged)="pageChanged($event)"
+    ></pagination>
+  </div>
+
+</main>
+

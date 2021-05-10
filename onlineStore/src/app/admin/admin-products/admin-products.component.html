@@ -1,0 +1,71 @@
+<div class="product">
+  <form class="form-group">
+    <div class="addProduct">
+      <h4>Products</h4>
+      <button
+        type="button"
+        class="btn btn-success btn-block"
+        (click)="addProduct()"
+      >Add</button>
+    </div>
+
+    <section class="categoriesList"  *ngIf="arrCategories">
+      <button type="button" class="btn btn-primary oneCategory"
+            *ngFor="let oneCategory of arrCategories; let i = index"
+            [class.activeCategory] = "activeCategory && oneCategory[1].nameUA === activeCategory[1].nameUA"
+            (click)=clickCategory(oneCategory)>
+        {{ oneCategory[1].nameUA }}
+      </button>
+      <button type="button" class="btn btn-primary oneCategory all" (click)=allCategory()>Всі</button>
+    </section>
+
+    <input
+      type="text"
+      class="form-control"
+      placeholder="filter name product..."
+      [(ngModel)]="searchProduct"
+      name="searchProduct"
+    />
+  </form>
+
+  <table class="table">
+    <thead>
+      <th style="width: 50px;">#</th>
+      <th style="width: 100px;">Category</th>
+      <th style="width: 100px;">NameEN</th>
+      <th style="width: 100px;">NameUA</th>
+      <th>Description</th>
+      <th style="width: 50px;">Price</th>
+      <th style="width: 100px;">Image</th>
+      <th style="width: 50px;">In top</th>
+      <th style="width: 100px;">Edit</th>
+      <th style="width: 100px;">Delete</th>
+    </thead>
+    <tbody *ngIf="arrProducts">
+      <tr *ngFor="let objProduct of arrProducts | filterName: searchProduct | filterCategory: searchCategory; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ objProduct[1].category[1].nameUA }}</td>
+        <td>{{ objProduct[1].nameEN }}</td>
+        <td>{{ objProduct[1].nameUA }}</td>
+        <td>{{ objProduct[1].description }}</td>
+        <td>{{ objProduct[1].price }}</td>
+        <td class="img"><img [src]="objProduct[1].image"/></td>
+        <td [style.color] = 'objProduct[1].inTop ? "green" : "red"'>{{ objProduct[1].inTop ? 'Yes' : 'No'}}</td>
+        <td>
+          <button
+            class="btn btn-warning btn-block"
+            (click)="editProduct(objProduct)"
+          >Edit</button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-block"
+            (click)="deleteProduct(objProduct)"
+          >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-modal-product [editOneProduct]="editOneProduct" *ngIf="modalService.modalAddEditProd" (addClick)="getProducts()"></app-modal-product>
+<app-modal-delete (addClick)="getProducts()"></app-modal-delete>

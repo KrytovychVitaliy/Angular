@@ -1,0 +1,66 @@
+section{
+  padding-left: 50px;
+  .basketEmpty{
+    margin: 50px 0 10px 50px;
+    .aRouter{
+      margin-top: 20px;
+      a{
+        font-size: 14px;
+      }
+    }
+  }
+
+  table{
+    max-width: 600px;
+    .trTotal{
+      text-align: end;
+      font-weight: bolder;
+    }
+    .delivery{
+      text-align: end;
+    }
+    th, td{
+      max-width: 100px;
+    }
+    .img{
+      img{
+        width: 100%;
+      }
+    }
+    .edit{
+      width: 120px;
+      .productCountWrapper{
+        margin: 0 auto;
+        input{
+          text-align: center;
+          margin: 0 0.8rem;
+          width: 3rem;
+        }
+        span{
+          cursor: pointer;
+          padding: 5px;
+        }
+      }
+    }
+    .address{
+      td{
+        vertical-align: baseline;
+      }
+      input{
+        width: 100%;
+        padding: 3px;
+      }
+    }
+      .warn{
+        color: red;
+      }
+  }
+  .full{
+    width: 600px;
+    height: 600px;
+  }
+}
+
+
+
+

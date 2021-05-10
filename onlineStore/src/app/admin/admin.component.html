@@ -1,1 +1,12 @@
-<p>admin works!</p>
+<section class="sectionLeftUser">
+  <div class="d-flex align-items-start navv">
+    <div class="nav flex-column nav-pills">
+      <button class="nav-link" [routerLink]="[ '/admin/categories' ]" routerLinkActive="active">Category</button>
+      <button class="nav-link" [routerLink]="[ '/admin/products' ]" routerLinkActive="active">Products</button>
+      <button class="nav-link" [routerLink]="[ '/admin/orders' ]" routerLinkActive="active">Orders</button>
+      <button class="nav-link" [routerLink]="[ '/admin/users' ]" routerLinkActive="active">Users</button>
+      <button class="nav-link" [routerLink]="[ '/admin/comments' ]" routerLinkActive="active">Comments</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</section>

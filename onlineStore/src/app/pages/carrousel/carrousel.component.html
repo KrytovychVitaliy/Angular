@@ -1,0 +1,16 @@
+<section>
+  <div class="oneProduct">
+    <carousel *ngIf="arrProductsTop">
+      <h3 class="title">Топ пропозицій:</h3>
+      <slide  *ngFor="let product of arrProductsTop; let i = index">
+        <img [src]="product[1].image" style="display: block; width: 100%;">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{product[1].nameUA}}</h3>
+          <p>{{product[1].description}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</section>
+
+

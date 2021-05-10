@@ -1,0 +1,36 @@
+<div class="category">
+  <div class="addCategory">
+    <h4>Categories</h4>
+    <button type="button" class="btn btn-success btn-block" (click)="addCategory()">Add</button>
+  </div>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Name EN</th>
+      <th>Name UA</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody *ngIf="arrCategories.length">
+      <tr *ngFor="let oneCategory of arrCategories | filterCategory: searchCategory; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ oneCategory[1].nameEN }}</td>
+        <td>{{ oneCategory[1].nameUA }}</td>
+        <td>
+          <button
+            class="btn btn-warning btn-block"
+            (click)="editCategory(oneCategory)"
+          >Edit</button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-block"
+            (click)="deleteCategory(oneCategory)"
+          >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-modal-category *ngIf="modalService.modalAddEditCategory" (addClick)="getCategories()"></app-modal-category>
+<app-modal-delete (addClick)="getCategories()"></app-modal-delete>

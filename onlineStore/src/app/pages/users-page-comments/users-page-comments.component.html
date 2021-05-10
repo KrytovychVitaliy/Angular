@@ -1,0 +1,11 @@
+<div class="comments" *ngIf="currentUser">
+  <div class="oneComment" *ngFor="let comment of currentUser.comments; let i = index">
+    <div class="title">
+      <div class="num"><span>#{{i+1}}</span></div>
+      <div class="user"><h6>Продукт:</h6><h5>{{comment.productName}} / {{comment.categoryName}}</h5></div>
+      <div><h6>Дата:</h6><h5>{{comment.date | date:'yyyy-MM-dd -- HH:mm:ss'}}</h5></div>
+    </div>
+    <hr>
+      <p class="text">{{comment.text}}</p>
+  </div>
+</div>

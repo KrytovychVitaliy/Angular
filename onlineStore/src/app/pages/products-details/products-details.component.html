@@ -1,0 +1,69 @@
+<main>
+  <section class="mainProduct" *ngIf="curentProduct">
+    <div class="row">
+      <div class="col-md-12 col-lg-l2">
+        <ul class="breadcrumb smallSlideLeft">
+          <li>
+            <a [routerLink]="[ '/home' ]">Головна</a>
+          </li>
+          <li>
+            <a [routerLink]="[ '/products' ]">Products</a>
+          </li>
+          <li *ngIf="curentProduct">
+            <a [routerLink]="[ '/products/'+ curentProduct.category[1].nameEN.toLowerCase()+'/' ]">{{curentProduct.category[1].nameEN}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="productDetail">
+      <div class="img">
+        <img [src]="curentProduct.image"/>
+      </div>
+      <div class="info">
+        <h3 class="name">{{ curentProduct.nameUA }}</h3>
+        <p class="description">{{ curentProduct.description }}</p>
+        <p class="description"> Ціна: {{ curentProduct.price }} грн.</p>
+        <div class="productCountWrapper">
+          <span (click)="productCounter(curentProduct, false)" class="productCount">-</span>
+          <input type="text" [value]="curentProduct.count">
+          <span (click)="productCounter(curentProduct, true)" class="productCount">+</span>
+        </div>
+        <button (click)="addToBasket(curentProduct)" class="btn btn-success">Замовити</button>
+      </div>
+    </div>
+  </section>
+  <div class="noComments"  *ngIf="curentProduct && !curentProduct.comments">
+    <h5>Цей товар ще не має коментарів</h5>
+  </div>
+  <div class="createComment" *ngIf="curentProduct && activeUser && !orBlocked">
+    <textarea  [(ngModel)]="comment" placeholder="Input new comment..." cols="30" rows="4" (input)="commentMessage = false"></textarea>
+    <h5 class="commentMessage" *ngIf="commentMessage">
+      <span>Ваш коментар відправлено на модерацію,</span><br>
+      <span>бажаєте додати ще один коментар?</span>
+    </h5>
+    <button (click)="postCommentNotModerated()" class="btn btn-success">Опублікувати коментар</button>
+  </div>
+  <div class="notactiveUser" *ngIf="curentProduct && !activeUser">
+    <p>
+      <span>Незареєстровані користувачі не можуть залишати коментарі.</span><br>
+      <span>Зареєструйтесь будь-ласка.</span>
+    </p>
+  </div>
+  <div class="blockedUser" *ngIf="curentProduct && orBlocked">
+    <h5>Ви не можете залишати коментарі.</h5>
+    <h5>Вас забловано.</h5>
+  </div>
+
+  <div class="comments" *ngIf="curentProduct && curentProduct.comments">
+    <div class="oneComment" *ngFor="let comment of curentProduct.comments; let i = index">
+      <div class="title">
+        <div class="num"><span>#{{i+1}}</span></div>
+        <div class="user"><h6>Автор:</h6><h5>{{comment.autorName}}</h5></div>
+        <div><h6>Дата:</h6><h5>{{comment.date | date:'yyyy-MM-dd -- HH:mm:ss'}}</h5></div>
+      </div>
+      <hr>
+        <p class="text">{{comment.text}}</p>
+    </div>
+  </div>
+</main>
+

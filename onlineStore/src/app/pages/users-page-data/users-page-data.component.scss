@@ -1,0 +1,20 @@
+section{
+  .data{
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    .dataUser{
+      .nameData{
+        display: inline-block;
+        width: 100px;
+      }
+      .nameData + span{
+        color: gray;
+      }
+    }
+  }
+  .button{
+    margin: 10px;
+  }
+}
+
