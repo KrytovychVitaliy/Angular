@@ -1,5 +1,9 @@
 section{
-  padding-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   .basketEmpty{
     margin: 50px 0 10px 50px;
     .aRouter{
@@ -55,12 +59,47 @@ section{
         color: red;
       }
   }
+
   .full{
     width: 600px;
     height: 600px;
   }
 }
 
+@media (max-width: 750px) {
+  section{
+    table{
+      max-width: 300px;
+      th, td{
+        font-size: 8px;
+        max-width: 50px;
 
+      }
+      .edit{
+        width: 80px;
+        padding-top: 0;
+        .productCountWrapper{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          input{
+            margin: 0rem;
+          }
+          span{
+            padding-top: 0;
+          }
+        }
+      }
+      .delete button{
+        padding: 5px;
+      }
+    }
+    .full{
+      width: 300px;
+      height: 300px;
+    }
+
+  }
+}
 
 

@@ -1,21 +1,51 @@
-<nav class="navbar navbar-light header">
-  <div class="d-flex align-items-start">
-    <div class="nav flex-row nav-pills" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
-      <h3 [routerLink]="[ '/home' ]">Online Store</h3>
-      <a class="nav-link" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
-      <a class="nav-link" [routerLink]="[ '/products' ]" routerLinkActive="active">Products</a>
-      <a  class="nav-link basketPrice" [routerLink]="[ '/basket' ]" routerLinkActive="active">
-        <img src="https://www.lapiec-pizza.com.ua/wp-content/themes/lapiec/fonts/svg-icons/shopping-cart.svg" alt="shopping-cart">
-        <span>
-          <i>{{totalPrice}} грн.</i>
-        </span>
-      </a>
-      <a class="nav-link" [routerLink]="[ '/checkIn' ]" routerLinkActive="active" *ngIf="!activeUser && check">Check in</a>
-      <a class="nav-link" [routerLink]="[ '/signIn' ]" routerLinkActive="active" *ngIf="!activeUser && !check">Sign in</a>
-      <a class="nav-link" [routerLink]="[ '/signOut' ]" routerLinkActive="active" *ngIf="activeUser">Sign out</a>
-      <a class="nav-link user" [routerLink]="[ '/users' ]" routerLinkActive="active" *ngIf="activeUser">{{activeUser[1].name}}</a>
-      <a class="nav-link" [routerLink]="[ '/admin' ]" routerLinkActive="active" *ngIf="activeUser && adminEmail === activeUser[1].email">Admin</a>
+<div class="header">
+
+  <nav class="navbar navbar-light bigHeader">
+    <div class="d-flex align-items-start">
+      <div class="nav flex-row nav-pills headerNav" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+        <h3 [routerLink]="[ '/home' ]">Online Store</h3>
+        <a class="nav-link" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
+        <a class="nav-link" [routerLink]="[ '/products' ]" routerLinkActive="active">Products</a>
+        <a  class="nav-link basketPrice" [routerLink]="[ '/basket' ]" routerLinkActive="active">
+          <img src="https://www.lapiec-pizza.com.ua/wp-content/themes/lapiec/fonts/svg-icons/shopping-cart.svg" alt="shopping-cart">
+          <span>
+            <i>{{totalPrice}} грн.</i>
+          </span>
+        </a>
+        <a class="nav-link" [routerLink]="[ '/checkIn' ]" routerLinkActive="active" *ngIf="!activeUser && check">Check in</a>
+        <a class="nav-link" [routerLink]="[ '/signIn' ]" routerLinkActive="active" *ngIf="!activeUser && !check">Sign in</a>
+        <a class="nav-link" [routerLink]="[ '/signOut' ]" routerLinkActive="active" *ngIf="activeUser">Sign out</a>
+        <a class="nav-link user" [routerLink]="[ '/users' ]" routerLinkActive="active" *ngIf="activeUser">{{activeUser[1].name}}</a>
+        <a class="nav-link" [routerLink]="[ '/admin' ]" routerLinkActive="active" *ngIf="activeUser && adminEmail === activeUser[1].email">Admin</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="smallHeader">
+    <h3 [routerLink]="[ '/home' ]">Online Store</h3>
+    <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-basic">
+        Menu <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="[ '/products' ]" routerLinkActive="active">Products</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="[ '/checkIn' ]" *ngIf="!activeUser && check" routerLinkActive="active">Check in</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="[ '/signIn' ]" *ngIf="!activeUser && !check" routerLinkActive="active">Sign in</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="[ '/signOut' ]" *ngIf="activeUser" routerLinkActive="active">Sign out</a></li>
+        <li role="menuitem"><a class="dropdown-item user" [routerLink]="[ '/users' ]" *ngIf="activeUser" routerLinkActive="active">{{activeUser[1].name}}</a></li>
+        <li role="menuitem"><a class="dropdown-item admin" [routerLink]="[ '/admin' ]" *ngIf="activeUser && adminEmail === activeUser[1].email" routerLinkActive="active">Admin</a></li>
+        <li role="menuitem">
+          <a class="dropdown-item basketPrice" [routerLink]="[ '/basket' ]" routerLinkActive="active">
+            <img src="https://www.lapiec-pizza.com.ua/wp-content/themes/lapiec/fonts/svg-icons/shopping-cart.svg" alt="shopping-cart">
+            <span>
+              <i>{{totalPrice}} грн.</i>
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-</nav>
 
+</div>

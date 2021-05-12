@@ -32,9 +32,9 @@
             <span (click)="productCounter(objProduct[1], true)" class="productCount">+</span>
           </div>
         </td>
-        <td>
+        <td class="delete">
           <button class="btn btn-danger btn-block" (click)="deleteProduct(objProduct)"
-          >Delete</button>
+          >Del</button>
         </td>
       </tr>
       <tr class="address">
@@ -43,7 +43,7 @@
             <input type="text" [(ngModel)]="address" name="address" placeholder="Input the delivery address...">
           </td>
           <td colspan="2">
-            <button class="btn btn-success btn-block" (click)="displayMap()">display on the map</button>
+            <button class="btn btn-success btn-block" (click)="displayMap()">display</button>
           </td>
       </tr>
       <tr *ngIf="errorAddress">
@@ -51,6 +51,9 @@
       </tr>
       <tr *ngIf="emptyAddress">
         <td colspan="9"><span class="warn">Поле "Address" - обов'язкове для заповнення!</span></td>
+      </tr>
+      <tr *ngIf="emptyUser">
+        <td colspan="9"><span class="warn">Ввійдіть в обліковий запис!</span></td>
       </tr>
       <tr class="delivery">
         <td colspan="5">Доставка:</td>
@@ -73,6 +76,7 @@
       </tr>
     </tbody>
   </table>
+
   <div class="full" id="map" #map *ngIf="arrProducts"></div>
 </section>
 

@@ -1,6 +1,7 @@
 .outside {
   .containerIN {
-
+    margin-left: 50%;
+    transform: translate(-50%, 0);
     .modalHeader {
       display: flex;
       justify-content: space-between;

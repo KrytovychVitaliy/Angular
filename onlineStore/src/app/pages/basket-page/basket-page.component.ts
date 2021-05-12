@@ -23,6 +23,7 @@ export class BasketPageComponent implements OnInit {
   formattedAddress = ''; //відформатована/четабельна адреса доставки
   errorAddress = false; //помилка в адресі доставки
   emptyAddress = false; //адресу доставки не введено
+  emptyUser = false; //немає активного юзера
   deliveryCost = 0; //вартість доставки
 
   arrProducts = null;
@@ -106,7 +107,9 @@ export class BasketPageComponent implements OnInit {
   }
 
   buy(): void {
-    if (this.formattedAddress) {
+    if (this.activeUser){
+      this.emptyUser = false;
+    if (this.formattedAddress) { //введення адреси доставки
       const newOrder: IOrder = {
         id: this.uuidv4Service.uuidv4(),
         date: new Date(),
@@ -135,6 +138,9 @@ export class BasketPageComponent implements OnInit {
     } else {
       this.emptyAddress = true;
     }
+    } else {
+      this.emptyUser = true;
+    }
   }
 
   returnProducts(): void {
@@ -151,7 +157,8 @@ export class BasketPageComponent implements OnInit {
       .then(() => {
         this.map = new google.maps.Map(this.divMap.nativeElement, {
           center: this.mapService.mapLocation,
-          zoom: 12.5
+          zoom: 12.5,
+          disableDefaultUI: true
         })
 
         const polygon1 = new google.maps.Polygon(this.mapService.sector1Param) //нанесення на карту sector1
