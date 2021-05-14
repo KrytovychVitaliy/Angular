@@ -12,6 +12,7 @@ import { ProductsService } from 'src/app/shared/services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  isLoad: boolean = null; //спінер завантаження img
   arrCategories = null; //всі категорії
   activeCategory = null; //поточна категорія
   arrCurrentProducts = []; //продукти поточної категорії
@@ -120,4 +121,10 @@ export class ProductsComponent implements OnInit {
     this.returnedArray = this.arrCurrentProducts.slice(startItem, endItem);
  }
 
+ onLoad(product): void{
+  product[1].isLoad = true;
+  if (!this.isLoad){
+    this.isLoad = true;
+  }
+}
 }

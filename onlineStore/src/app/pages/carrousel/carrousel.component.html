@@ -1,13 +1,19 @@
-<section>
+<section carousel>
   <div class="oneProduct">
     <carousel *ngIf="arrProductsTop">
       <h3 class="title">Топ пропозицій:</h3>
       <slide  *ngFor="let product of arrProductsTop; let i = index">
-        <img [src]="product[1].image" style="display: block; width: 100%;">
-        <div class="carousel-caption d-none d-md-block">
+        <img [src]="product[1].image" style="display: block; width: 100%;" (load)="onLoad()">
+        <div class="carousel-caption d-none d-md-block" *ngIf="isLoad">
           <h3>{{product[1].nameUA}}</h3>
           <p>{{product[1].description}}</p>
         </div>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-primary spinner" role="status" *ngIf="!isLoad">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
       </slide>
     </carousel>
   </div>

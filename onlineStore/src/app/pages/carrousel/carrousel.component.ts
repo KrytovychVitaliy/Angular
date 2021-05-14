@@ -12,6 +12,7 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 
 export class CarrouselComponent implements OnInit {
+  isLoad: boolean = null; //спінер завантаження img
   arrProductsTop = null;
 
   constructor(
@@ -30,4 +31,9 @@ export class CarrouselComponent implements OnInit {
         });
   }
 
+  onLoad(): void{
+    if (!this.isLoad){
+      this.isLoad = true;
+    }
+  }
 }
