@@ -86,13 +86,13 @@ export class ProductsDetailsComponent implements OnInit {
   private loadLocalStorageUser(): void {
     if (localStorage.length > 0 && localStorage.getItem('activeUser')) { //якщо є залогінений користувач
       this.activeUser = JSON.parse(localStorage.getItem('activeUser'));
-    } else { //якщо немає залогінених користувачів
-      this.activeUser = null;
-    }
     this.usersService.getOneUser(this.activeUser[0])
       .then( respons => {
         this.orBlocked = respons.block; //актуальна інформація про блокування
       });
+    } else { //якщо немає залогінених користувачів
+      this.activeUser = null;
+    }
   }
 
 }

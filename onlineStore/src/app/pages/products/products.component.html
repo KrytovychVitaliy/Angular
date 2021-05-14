@@ -30,7 +30,9 @@
 
   <section class="productsList" *ngIf="arrCurrentProducts">
     <div class="oneProduct" *ngFor="let product of returnedArray; let i = index">
-      <div class="clickDetails" (click)="openDetails(product)"><img [src]="product[1].image"/></div>
+      <div class="clickDetails" (click)="openDetails(product)">
+        <img [src]="product[1].image"/>
+      </div>
       <h5 class="clickDetails" (click)="openDetails(product)">{{product[1].nameUA}}</h5>
       <p>{{product[1].description}}</p>
       <p class="pPrice"><span class="spanPrice">{{product[1].price}}</span><span class="spanValuta"> грн.</span></p>

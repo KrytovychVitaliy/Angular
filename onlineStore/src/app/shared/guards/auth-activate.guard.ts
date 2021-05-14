@@ -18,12 +18,12 @@ export class AuthActivateGuard implements CanActivate {
   }
 
   isLogin(): boolean{
-      if (localStorage.length > 0 && localStorage.getItem('activeUser')) { //перевірка наявності залогіненого користувача
-        return true;
-      }
-      else {
-        this.router.navigate(['/checkIn']);
-        return false;
-      }
+    if (localStorage.length > 0 && localStorage.getItem('activeUser')) { //перевірка наявності залогіненого користувача
+      return true;
     }
+    else {
+      this.router.navigate(['/checkIn']);
+      return false;
+    }
+  }
 }

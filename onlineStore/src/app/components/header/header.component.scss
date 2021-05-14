@@ -1,6 +1,10 @@
 .header {
   .smallHeader {
     display: none;
+    .dropdown-toggle#button-basic{
+      height: 25px;
+      padding: 0;
+    }
   }
   height: 70px;
   background-color: var(--header-background);
@@ -24,7 +28,7 @@
   }
 }
 
-@media (max-width: 610px) {
+@media (max-width: 620px) {
   .header {
     .bigHeader {
       display: none;

@@ -9,23 +9,20 @@
       <th>#</th>
       <th>Image</th>
       <th>Name</th>
-      <th>Category</th>
       <th>Price</th>
-      <th>Count</th>
-      <th>Total</th>
-      <th>Edit</th>
+      <th class="count">Count</th>
       <th>Delete</th>
     </thead>
     <tbody>
       <tr *ngFor="let objProduct of arrProducts; let i = index">
         <td>{{ i + 1 }}</td>
         <td class="img"><img [src]="objProduct[1].image"/></td>
-        <td>{{ objProduct[1].nameUA }}</td>
-        <td>{{ objProduct[1].category[1].nameUA }}</td>
+        <td>
+          <p>{{ objProduct[1].category[1].nameUA }}</p>
+          <p>{{ objProduct[1].nameUA }}</p>
+        </td>
         <td>{{ objProduct[1].price }}</td>
-        <td>{{ objProduct[1].count }}</td>
-        <td>{{ objProduct[1].price * objProduct[1].count }}</td>
-        <td class="edit">
+        <td class="edit count">
           <div class="productCountWrapper">
             <span (click)="productCounter(objProduct[1], false)" class="productCount">-</span>
             <input type="text" [value]="objProduct[1].count">
@@ -34,40 +31,45 @@
         </td>
         <td class="delete">
           <button class="btn btn-danger btn-block" (click)="deleteProduct(objProduct)"
-          >Del</button>
+          >-</button>
         </td>
       </tr>
+
       <tr class="address">
-          <td colspan="2"><span>Address: </span></td>
-          <td colspan="5">
-            <input type="text" [(ngModel)]="address" name="address" placeholder="Input the delivery address...">
+          <td colspan="2"  class="address_span"><span>Address: </span></td>
+          <td colspan="2">
+            <input type="text" [(ngModel)]="address" name="address" placeholder="Input...">
           </td>
           <td colspan="2">
             <button class="btn btn-success btn-block" (click)="displayMap()">display</button>
           </td>
       </tr>
+
       <tr *ngIf="errorAddress">
-        <td colspan="9"><span class="warn">Таку адресу не знайдено - спробуйте ввести ще раз!</span></td>
+        <td colspan="6"><span class="warn">Таку адресу не знайдено - спробуйте ввести ще раз!</span></td>
       </tr>
       <tr *ngIf="emptyAddress">
-        <td colspan="9"><span class="warn">Поле "Address" - обов'язкове для заповнення!</span></td>
+        <td colspan="6"><span class="warn">Поле "Address" - обов'язкове для заповнення!</span></td>
       </tr>
       <tr *ngIf="emptyUser">
-        <td colspan="9"><span class="warn">Ввійдіть в обліковий запис!</span></td>
+        <td colspan="6"><span class="warn">Ввійдіть в обліковий запис!</span></td>
       </tr>
+
       <tr class="delivery">
-        <td colspan="5">Доставка:</td>
+        <td colspan="2">Доставка:</td>
         <td colspan="2">{{deliveryCost}} грн.</td>
         <td colspan="2"></td>
       </tr>
+
       <tr class="trTotal">
-        <td colspan="5">Всього:</td>
+        <td colspan="2">Всього:</td>
         <td colspan="2">{{totalPrice + deliveryCost}} грн.</td>
         <td colspan="2"></td>
       </tr>
+
       <tr class="trButton">
-        <td colspan="4"></td>
-        <td colspan="3">
+        <td colspan="2"></td>
+        <td colspan="2" class="tr_Button">
           <button class="btn btn-success btn-block" (click)="returnProducts()">Вибрати ще</button>
         </td>
         <td colspan="2">

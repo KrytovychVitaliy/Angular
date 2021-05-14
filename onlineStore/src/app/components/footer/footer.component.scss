@@ -64,17 +64,24 @@
       flex-direction: column;
       .licence{
         text-align: center;
+        p, span{
+          font-size: 10px;
+        }
       }
       .workSchedule {
         margin: 20px 0 0 0;
         font-weight: bolder;
         p{
           letter-spacing: 1px;
+          font-size: 10px;
         }
       }
       .address{
         text-align: center;
         margin-bottom: 20px;
+        p, span{
+          font-size: 10px;
+        }
       }
     }
 }

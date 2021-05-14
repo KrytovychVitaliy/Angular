@@ -15,13 +15,30 @@ section{
   }
 
   table{
-    max-width: 600px;
+    max-width: 400px;
+
+    tbody{
+      button{
+        max-width: 100px;
+      }
+      p{
+        margin: 0;
+      }
+    }
     .trTotal{
       text-align: end;
       font-weight: bolder;
     }
     .delivery{
       text-align: end;
+    }
+    .count{
+      text-align: center;
+    }
+    .tr_Button {
+      button{
+        float: right;
+      }
     }
     th, td{
       max-width: 100px;
@@ -50,14 +67,17 @@ section{
       td{
         vertical-align: baseline;
       }
+      .address_span{
+        text-align: end;
+      }
       input{
         width: 100%;
         padding: 3px;
       }
     }
-      .warn{
-        color: red;
-      }
+    .warn{
+      color: red;
+    }
   }
 
   .full{
@@ -66,17 +86,28 @@ section{
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
+  section{
+    .full{
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
   section{
     table{
-      max-width: 300px;
+      max-width: 280px;
       th, td{
         font-size: 8px;
-        max-width: 50px;
-
+        max-width: 40px;
+      }
+      .img{
+        width: 60px;
       }
       .edit{
-        width: 80px;
+        width: 60px;
         padding-top: 0;
         .productCountWrapper{
           display: flex;
@@ -84,21 +115,34 @@ section{
           align-items: center;
           input{
             margin: 0rem;
+            font-size: 8px;
           }
           span{
             padding-top: 0;
+            font-size: 8px;
           }
         }
       }
       .delete button{
         padding: 5px;
       }
+      .address span{
+        font-size: 8px;
+      }
+      .address button{
+        font-size: 8px;
+      }
+      .trButton button{
+        font-size: 8px;
+      }
+      td p{
+        font-size: 8px;
+      }
     }
     .full{
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
     }
-
   }
 }
 

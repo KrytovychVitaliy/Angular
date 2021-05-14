@@ -5,6 +5,7 @@ import { CategoriesService } from 'src/app/shared/services/categories.service';
 import { ConstantsService } from 'src/app/shared/services/constants.service';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -24,8 +25,8 @@ export class ProductsComponent implements OnInit {
     private categoriesService: CategoriesService,
     private route: ActivatedRoute,
     private router: Router,
-    private constantsService: ConstantsService
-   ) {}
+    private constantsService: ConstantsService,
+   ) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -106,6 +107,7 @@ export class ProductsComponent implements OnInit {
 
   addToBasket(product): void {
     this.productsService.addToBasket(product);
+    product[1].count = 1;
   }
 
   openDetails(product): void{

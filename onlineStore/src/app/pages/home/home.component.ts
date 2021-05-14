@@ -17,6 +17,4 @@ export class HomeComponent implements OnInit {
     this.data = this.constantsService.companyDetails;
   }
 
-
-
 }
