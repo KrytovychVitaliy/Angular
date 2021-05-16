@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsTopService } from 'src/app/shared/services/products-top.service';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrousel',
@@ -16,7 +17,8 @@ export class CarrouselComponent implements OnInit {
   arrProductsTop = null;
 
   constructor(
-    private productsTopService: ProductsTopService
+    private productsTopService: ProductsTopService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,5 +37,9 @@ export class CarrouselComponent implements OnInit {
     if (!this.isLoad){
       this.isLoad = true;
     }
+  }
+
+  toOneProduct(product){
+    this.router.navigate([`/products/${product[1].category[1].nameEN.toLowerCase()}/${product[1].inTop}`]);
   }
 }

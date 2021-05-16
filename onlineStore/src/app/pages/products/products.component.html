@@ -56,7 +56,7 @@
     <h5>У вибраній категорії ще немає продуктів</h5>
   </div>
 
-  <div class="pagination" *ngIf="arrCurrentProducts.length > paginationQuantity">
+  <div class="pagination" *ngIf="arrCurrentProducts && arrCurrentProducts.length > paginationQuantity">
     <pagination
       [totalItems]="arrCurrentProducts.length"
       [itemsPerPage]="paginationQuantity"

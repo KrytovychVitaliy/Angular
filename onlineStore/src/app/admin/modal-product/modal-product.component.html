@@ -83,11 +83,11 @@
       </div>
     </div>
 
-    <div class="inTop">
+    <div class="inTop" *ngIf = "!addOrEdit">
       <p>Top</p>
       <input type="checkbox" [(ngModel)]="currentProduct.inTop" name="inTop">
     </div>
-    <hr>
+    <hr *ngIf = "!addOrEdit">
 
     <div id="uploadProducts">
       <p>Upload img</p>

@@ -21,7 +21,7 @@
           house: {{ oneUser[1].house }}
         </td>
         <td>
-          <button *ngIf="!oneUser[1].block" class="btn btn-warning btn-block" (click)="blockUser(oneUser)">to block</button>
+          <button *ngIf="!oneUser[1].block" class="btn btn-warning btn-block" (click)="blockUser(oneUser)">block</button>
           <button *ngIf="oneUser[1].block" class="btn btn-danger btn-block" (click)="unblockUser(oneUser)">unblock</button>
         </td>
         <td>

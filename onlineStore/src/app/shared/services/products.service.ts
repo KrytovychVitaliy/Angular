@@ -91,7 +91,7 @@ export class ProductsService {
     let arrCategories = [];
     this.categoriesService.getCategories()
       .then((response) => {
-        arrCategories = response;
+        arrCategories = response; //отримання категорій
       })
       .then(() => {
         arrCategories.forEach((element) => {

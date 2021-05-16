@@ -1,6 +1,14 @@
 main{
-  margin-left: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  max-width: max-content;
   .mainProduct{
+    align-self: start;
+    margin-bottom: 10px;
     .breadcrumb {
       padding-left: 0;
       background-color: transparent;
@@ -19,6 +27,7 @@ main{
     }
     .productDetail{
       display: flex;
+      flex-wrap: wrap;
       .img{
         width: 400px;
         img{
@@ -26,7 +35,7 @@ main{
         }
       }
       .info{
-        max-width: 300px;
+        max-width: 250px;
         margin: 0 10px;
         .productCountWrapper{
           input{
@@ -45,29 +54,74 @@ main{
       }
     }
   }
-  .createComment{ //створення коментаря
-    display: flex;
-    flex-direction: column;
-    textarea {
-      resize: none;
-      width: 400px;
-      padding-left: 10px;
+  .details{
+    align-self: start;
+    .createComment{ //створення коментаря
+      display: flex;
+      flex-direction: column;
+      textarea {
+        resize: none;
+        width: 400px;
+        padding-left: 10px;
+      }
+      .btn{
+        width: 200px;
+        margin: 0.8rem 0;
+      }
+      .commentMessage{
+        color: red;
+      }
     }
-    .btn{
-      width: 200px;
-      margin: 0.8rem 0;
-    }
-    .commentMessage{
+    .blockedUser{
+      margin: 50px 0;
       color: red;
     }
   }
-  .blockedUser{
-    margin: 50px 0;
-    color: red;
-  }
+
   h5{
-    margin: 20px 50px;
+    margin: 20px 0;
   }
 }
 
+@media (max-width: 720px) {
+  main{
+    .mainProduct{
+      .productDetail{
+        flex-direction: column;
+        .info{
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
 
+@media (max-width: 500px) {
+  main{
+    .mainProduct{
+      .productDetail{
+        .img{
+          width: 250px;
+        }
+      }
+    }
+    .details{
+      .createComment{
+        textarea{
+          width: 250px;
+        }
+      }
+    }
+    .comments{
+      .oneComment{
+        width: 250px;
+        .title{
+          flex-direction: column;
+          span, h5, h6 {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}

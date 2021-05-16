@@ -9,6 +9,6 @@ export interface IProduct {
   category: any[];
   image: string;
   count: number;
-  inTop: boolean;
-  comments?: []
+  inTop: boolean | string;
+  comments?: [];
 }

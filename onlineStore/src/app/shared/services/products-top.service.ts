@@ -5,6 +5,7 @@ import { ConstantsService } from './constants.service';
   providedIn: 'root'
 })
 export class ProductsTopService {
+  arrAuditTop = null; //при видаленні категорії
 
   constructor(
     private constantsService: ConstantsService
@@ -42,6 +43,6 @@ export class ProductsTopService {
           'Content-Type': 'application/json',
         },
       }
-    );
+    ).catch(e => console.error(e));
   }
 }

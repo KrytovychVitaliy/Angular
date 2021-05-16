@@ -32,29 +32,32 @@
       </div>
     </div>
   </section>
-  <div class="noComments"  *ngIf="curentProduct && !curentProduct.comments">
-    <h5>Цей товар ще не має коментарів</h5>
-  </div>
-  <div class="createComment" *ngIf="curentProduct && activeUser && !orBlocked">
-    <textarea  [(ngModel)]="comment" placeholder="Input new comment..." cols="30" rows="4" (input)="commentMessage = false"></textarea>
-    <h5 class="commentMessage" *ngIf="commentMessage">
-      <span>Ваш коментар відправлено на модерацію,</span><br>
-      <span>бажаєте додати ще один коментар?</span>
-    </h5>
-    <button (click)="postCommentNotModerated()" class="btn btn-success">Опублікувати коментар</button>
-  </div>
-  <div class="notactiveUser" *ngIf="curentProduct && !activeUser">
-    <p>
-      <span>Незареєстровані користувачі не можуть залишати коментарі.</span><br>
-      <span>Зареєструйтесь будь-ласка.</span>
-    </p>
-  </div>
-  <div class="blockedUser" *ngIf="curentProduct && orBlocked">
-    <h5>Ви не можете залишати коментарі.</h5>
-    <h5>Вас забловано.</h5>
-  </div>
+  
+  <section class="details">
+    <div class="noComments"  *ngIf="curentProduct && !curentProduct.comments">
+      <h5>Цей товар ще не має коментарів</h5>
+    </div>
+    <div class="createComment" *ngIf="curentProduct && activeUser && !orBlocked">
+      <textarea  [(ngModel)]="comment" placeholder="Input new comment..." cols="30" rows="4" (input)="commentMessage = false"></textarea>
+      <h5 class="commentMessage" *ngIf="commentMessage">
+        <span>Ваш коментар відправлено на модерацію,</span><br>
+        <span>бажаєте додати ще один коментар?</span>
+      </h5>
+      <button (click)="postCommentNotModerated()" class="btn btn-success">Опублікувати коментар</button>
+    </div>
+    <div class="notactiveUser" *ngIf="curentProduct && !activeUser">
+      <p>
+        <span>Незареєстровані користувачі не можуть залишати коментарі.</span><br>
+        <span>Зареєструйтесь будь-ласка.</span>
+      </p>
+    </div>
+    <div class="blockedUser" *ngIf="curentProduct && orBlocked">
+      <h5>Ви не можете залишати коментарі.</h5>
+      <h5>Вас забловано.</h5>
+    </div>
+  </section>
 
-  <div class="comments" *ngIf="curentProduct && curentProduct.comments">
+  <section class="comments" *ngIf="curentProduct && curentProduct.comments">
     <div class="oneComment" *ngFor="let comment of curentProduct.comments; let i = index">
       <div class="title">
         <div class="num"><span>#{{i+1}}</span></div>
@@ -64,6 +67,6 @@
       <hr>
         <p class="text">{{comment.text}}</p>
     </div>
-  </div>
+  </section>
 </main>
 

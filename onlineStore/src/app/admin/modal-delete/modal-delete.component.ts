@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { CategoriesService } from "src/app/shared/services/categories.service";
 import { ModalAddEditeService } from "src/app/shared/services/modal-add-edite.service";
+import { ProductsTopService } from "src/app/shared/services/products-top.service";
 import { ProductsService } from "src/app/shared/services/products.service";
 import { UploadImgService } from "src/app/shared/services/upload-img.service";
 import { UsersService } from "src/app/shared/services/users.service";
@@ -18,6 +19,7 @@ export class ModalDeleteComponent implements OnInit {
     public usersService: UsersService,
     private categoriesService: CategoriesService,
     private productsService: ProductsService,
+    private productsTopService: ProductsTopService,
     private uploadService: UploadImgService
   ) { }
 
@@ -34,7 +36,6 @@ export class ModalDeleteComponent implements OnInit {
     if (this.modalService.deleteUser) { //видалення продукта
       this.deleteUser();
     }
-    this.dismiss();
   }
 
   deleteCategory(): void{
@@ -61,6 +62,8 @@ export class ModalDeleteComponent implements OnInit {
             });
           })
           .then(() =>{
+            this.productsTopService.arrAuditTop = [...arrDelProd]; //внесення масиву продуктів для видалення - для Топу
+            this.deleteTopProduct();
             arrDelProd.forEach(element => { //видалення продуктів, що містяться у цій категорії
               this.modalService.deleteProduct = element;
               this.deleteProduct();
@@ -71,17 +74,45 @@ export class ModalDeleteComponent implements OnInit {
     .deleteСategory(this.modalService.deleteCategory[0])
     .then(() => {
       this.addClick.emit();
-    })
+    });
   }
 
   deleteProduct(): void{
     this.uploadService.deleteImg(this.modalService.deleteProduct[1].image); //видалення img
     this.productsService.deleteId(this.modalService.deleteProduct); //видалення id продукту з відповідної категорії
     this.productsService.deleteProduct(this.modalService.deleteProduct[0]) //видалення самого продукту
-      .then(() => {
-        this.addClick.emit();
-        this.dismiss();
-      });
+    if (!this.modalService.deleteCategory) { //якщо не відбувається видалення категорії
+      this.deleteTopProduct(); //тоді видалення 1 продукту в Tопі (якщо він там є)
+    }
+  }
+
+  deleteTopProduct(): void{ //видалення продукту/продуктів з Топ
+    this.productsTopService.getProductsTop()
+      .then(arrProductsTop => {
+        if (!this.modalService.deleteCategory) { //якщо не відбувається видалення категорії - видалення 1 продукту з Топ
+          if (arrProductsTop) {
+            arrProductsTop.forEach(element => {
+              if (element[1] && element[1].id === this.modalService.deleteProduct[1].id){
+                this.productsTopService.deleteProduct(element[0]); //видалення, якщо є в Топ
+              };
+            });
+          };
+          this.addClick.emit();
+          this.dismiss();
+        } else if (this.modalService.deleteCategory) { //якщо відбувається видалення категорії
+          if (arrProductsTop) {
+            arrProductsTop.forEach(element => {
+              this.productsTopService.arrAuditTop.forEach(el => {
+                if (element[1].id === el[1].id) {
+                  this.productsTopService.deleteProduct(element[0]); //видалення продукту з Топ
+                }
+              });
+            });
+          };
+          this.productsTopService.arrAuditTop = null;
+          this.dismiss();
+        }
+      })
   }
 
   deleteUser(): void{

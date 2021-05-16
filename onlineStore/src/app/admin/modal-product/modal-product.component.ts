@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { NgForm } from '@angular/forms';
 import { IProduct } from "src/app/shared/interfaces/product.interface";
 import { Product } from "src/app/shared/models/product.model";
 import { CategoriesService } from "src/app/shared/services/categories.service";
@@ -124,18 +123,31 @@ export class ModalProductComponent implements OnInit {
   }
 
   changeTop(): void{ //видалення / додавання товару в Top
-    if (this.currentProduct.inTop){ //додавання товару в Top
-      this.productsTopService
-        .postProductTop(this.currentProduct)
-    } else { //видалення товару з топ, якщо він був попередньо туди внесений
+    if (this.currentProduct.inTop && !this.checkTop()){ //додавання товару в Top - якщо чек і при цьому, якщо його ще там немає
+      this.currentProduct.inTop = this.editOneProduct[0];
+      this.productsTopService.postProductTop(this.currentProduct)
+    } else if (!this.currentProduct.inTop){ //видалення товару з Tоп, якщо він був попередньо туди внесений і якщо відсутній чек
       if (this.arrProductsTop){
         this.arrProductsTop.forEach(element => {
           if (element[1].id === this.currentProduct.id){
-            this.productsTopService
-              .deleteProduct(element[0])
+            this.productsTopService.deleteProduct(element[0])
           }
         });
       }
+    }
+  }
+
+  checkTop(): boolean{ //перевірка чи товар вже знаходиться в Tоп
+    let isTop = false;
+    if (this.arrProductsTop){
+      this.arrProductsTop.forEach(element => {
+        if (element[1].id === this.currentProduct.id){
+          isTop = true;
+        }
+      });
+      return isTop;
+    } else {
+      return isTop;
     }
   }
 
