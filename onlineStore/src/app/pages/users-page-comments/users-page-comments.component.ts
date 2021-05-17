@@ -26,11 +26,16 @@ export class UsersPageCommentsComponent implements OnInit {
       this.loadLocalStorageUser();
     })
   }
+
   private loadLocalStorageUser(): void {
-    this.userLocal = JSON.parse(localStorage.getItem('activeUser'));
-    this.usersService.getOneUser(this.userLocal[0])
-      .then(data => {
-        this.currentUser = data;
-      })
+    if (localStorage.length > 0) {
+      this.userLocal = JSON.parse(localStorage.getItem('activeUser'));
+      if (this.userLocal && this.userLocal[0]) {
+        this.usersService.getOneUser(this.userLocal[0])
+          .then(data => {
+            this.currentUser = data;
+          })
+      }
+    }
   }
 }

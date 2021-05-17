@@ -191,8 +191,11 @@ class SignOutComponent {
             this.orderService.basket.next(null);
         }
         ;
-        localStorage.removeItem('activeUser'); //очистка даних користувача
-        this.authorizationService.loggedIn.next(null);
+        if (localStorage.length > 0 && localStorage.getItem('activeUser')) { //якщо є залогінений користувач
+            localStorage.removeItem('activeUser'); //очистка даних користувача
+            this.authorizationService.loggedIn.next(null);
+        }
+        ;
         this.router.navigate(['/products']); //перехід на сторінку товарів
     }
     cancel() {
@@ -2972,11 +2975,15 @@ class UsersPageCommentsComponent {
         });
     }
     loadLocalStorageUser() {
-        this.userLocal = JSON.parse(localStorage.getItem('activeUser'));
-        this.usersService.getOneUser(this.userLocal[0])
-            .then(data => {
-            this.currentUser = data;
-        });
+        if (localStorage.length > 0) {
+            this.userLocal = JSON.parse(localStorage.getItem('activeUser'));
+            if (this.userLocal && this.userLocal[0]) {
+                this.usersService.getOneUser(this.userLocal[0])
+                    .then(data => {
+                    this.currentUser = data;
+                });
+            }
+        }
     }
 }
 UsersPageCommentsComponent.ɵfac = function UsersPageCommentsComponent_Factory(t) { return new (t || UsersPageCommentsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_services_authorization_service__WEBPACK_IMPORTED_MODULE_1__["AuthorizationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_services_users_service__WEBPACK_IMPORTED_MODULE_2__["UsersService"])); };

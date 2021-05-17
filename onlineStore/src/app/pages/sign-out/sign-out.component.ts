@@ -24,8 +24,10 @@ export class SignOutComponent implements OnInit {
       localStorage.removeItem('basket'); //очистка кошика
       this.orderService.basket.next(null);
     };
-    localStorage.removeItem('activeUser'); //очистка даних користувача
-    this.authorizationService.loggedIn.next(null);
+    if (localStorage.length > 0 && localStorage.getItem('activeUser')) { //якщо є залогінений користувач
+      localStorage.removeItem('activeUser'); //очистка даних користувача
+      this.authorizationService.loggedIn.next(null);
+    };
     this.router.navigate(['/products']); //перехід на сторінку товарів
   }
 
