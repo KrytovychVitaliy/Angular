@@ -119,12 +119,16 @@ export class ProductsComponent implements OnInit {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
     this.returnedArray = this.arrCurrentProducts.slice(startItem, endItem);
- }
-
- onLoad(product): void{
-  product[1].isLoad = true;
-  if (!this.isLoad){
-    this.isLoad = true;
   }
-}
+
+  onLoad(product): void{
+    product[1].isLoad = true;
+    if (!this.isLoad){
+      this.isLoad = true;
+    }
+  }
+
+  getCheck(oneCategory): boolean{
+    return (oneCategory[1].nameEN.toLowerCase() === this.route.snapshot.paramMap.get('category'));
+  }
 }

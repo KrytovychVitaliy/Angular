@@ -2,7 +2,17 @@
 
 :root {
   --header-background: rgb(180, 180, 180);
+  --header-button-active: rgb(180, 180, 180);
+  --a: rgb(233, 233, 233);
+  --link: rgb(236, 206, 124);
+  --a-hover: rgb(236, 206, 124);
+  --a-dropdown-hover: rgb(233, 233, 233);
+
   --body-background: rgb(233, 233, 233);
+  --body-button-background: rgb(233, 233, 233);
+  --body-button-background-hover: rgb(180, 180, 180);
+  --body-background-hover: rgb(233, 236, 9);
+
   --card-background: white;
   --max-width: 900px;
 }
@@ -48,7 +58,7 @@
       border: none;
       background-color: #fff;
       &:hover {
-        background-color: rgb(170, 170, 170);
+        background-color: var(--header-background);
         color: white;
       }
     }
@@ -62,7 +72,6 @@
 .comments {  //коментарі користувачів
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 10px;
   .oneComment {
     padding: 10px;
     max-width: 600px;
@@ -98,6 +107,7 @@
 }
 
 .orders {  //ордери
+  max-width: 450px;
   display: flex;
   flex-direction: column-reverse;
   .table {
@@ -110,10 +120,15 @@
           width: 100%;
         }
       }
+      .deliveryAddress{
+        text-align: left;
+        overflow: hidden;
+
+      }
       .info {
         text-align: right;
         font-weight: bolder;
-        color: blue;
+        color: var(--header-background);
       }
     }
   }

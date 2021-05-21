@@ -18,6 +18,22 @@ section{
   }
   .button{
     margin: 10px 0;
+    button{
+      width: 120px;
+    }
+  }
+  .btn-success {
+    color: #fff;
+    background-color: var(--link);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      box-shadow: 0 0 5px var(--link);
+    }
+    &:active{
+      background-color: var(--body-background);
+      box-shadow: none;
+    }
   }
 }
 

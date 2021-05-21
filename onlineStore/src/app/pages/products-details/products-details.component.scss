@@ -21,9 +21,14 @@ main{
         -o-transition: color .250s linear;
         transition: color .250s linear;
       }
-      li:hover a {
-        color: #c80000;
+      li a {
+        font-weight: bolder;
+        color: var(--header-background);
       }
+      li:hover a {
+        color: var(--link);
+      }
+
     }
     .productDetail{
       display: flex;
@@ -80,6 +85,19 @@ main{
 
   h5{
     margin: 20px 0;
+  }
+  .btn-success {
+    color: #fff;
+    background-color: var(--link);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      box-shadow: 0 0 5px var(--link);
+    }
+    &:active{
+      background-color: var(--body-background);
+      box-shadow: none;
+    }
   }
 }
 

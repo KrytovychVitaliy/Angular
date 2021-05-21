@@ -13,15 +13,27 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    .btn-primary{
+      font-weight: bolder;
+      color: var(--header-background);
+      background-color: var(--body-button-background);
+      border-color: var(--header-background);
+      box-shadow: none;
+      &:hover{
+        background-color: var(--body-button-background-hover);
+        color: var(--a-hover);
+      }
+    }
     button{
-      min-width: 150px;
+      min-width: 140px;
     }
     .oneCategory{
       margin: 10px;
     }
     .activeCategory{
-      background-color: var(--body-background);
-      color: rgb(0, 0, 0);
+      background-color: var(--body-button-background-hover);
+      color: var(--a-hover);
+      box-shadow: none;
     }
   }
 
@@ -40,6 +52,18 @@ main{
       border-radius: 10px;
       overflow: hidden;
       background-color: var(--card-background);
+      .btn-success {
+        color: #fff;
+        background-color: var(--link);
+        border: none;
+        box-shadow: none;
+        &:hover{
+          box-shadow: 0 0 5px var(--link);
+          }
+        &:active{
+          background-color: var(--body-background);
+        }
+      }
       h5{
         margin: 20px 0;
       }
@@ -81,6 +105,26 @@ main{
     }
   }
 
+  .btn-primary {
+    color: var(--header-background);
+    background-color: var(--body-background);
+    border-color: var(--header-background);
+    box-shadow: none;
+  }
+  a.dropdown-item {
+    color: var(--header-background);
+    &:hover{
+      background-color: var(--a-dropdown-hover);
+    }
+  }
+  a.dropdown-item.check {
+    color: var(--link);
+    background-color: var(--header-background);
+    &:hover{
+      background-color: var(--a-dropdown-hover);
+    }
+  }
+
   .noProducts{
     display: flex;
     justify-content: center;
@@ -89,15 +133,34 @@ main{
     }
   }
 
-  .pagination{
+  .products-pagination{
     margin: 20px 0;
     display: flex;
     justify-content: center;
+
+    ::ng-deep .page-link {
+      background-color: var(--body-background);
+      border: 1px solid rgb(255, 255, 255);
+      color: var(--header-background);
+
+      &:hover {
+        background-color: var(--header-background);
+        color: var(--link);
+      }
+    }
+
+    ::ng-deep .page-item {
+      &.active .page-link {
+        background-color: var(--header-background);
+        font-weight: bolder;
+        color: var(--link);
+      }
+    }
   }
 
   .spinner{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -117,11 +180,14 @@ main{
       display: flex;
       margin: 20px 0;
       button{
+        box-shadow: none;
         width: 150px;
-        background-color: rgb(108, 212, 122);
-        border: 1px solid rgb(108, 212, 122);
         &:focus{
-          box-shadow: 0 0 0 0.2rem rgba(108, 212, 122, 0.3);
+          box-shadow: none;
+        }
+        &:active{
+          background-color: var(--body-background);
+          border: none;
         }
       }
       li{

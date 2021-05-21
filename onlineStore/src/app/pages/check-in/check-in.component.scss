@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  
+
   .err{
     margin-top: 1rem;
     color: red;
@@ -14,6 +14,32 @@
   h4{
     text-align: center;
     margin: 5px 0;
+  }
+
+  .btn-success {
+    color: #fff;
+    background-color: var(--link);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      box-shadow: 0 0 5px var(--link);
+    }
+    &:active{
+      background-color: var(--body-background);
+      box-shadow: none;
+    }
+  }
+  .btn-danger {
+    background-color: var(--header-background);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      box-shadow: 0 0 5px var(--header-background);
+    }
+    &:active{
+      background-color: var(--body-background);
+      box-shadow: none;
+    }
   }
 }
 

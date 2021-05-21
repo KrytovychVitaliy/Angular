@@ -81,8 +81,8 @@
           <div [hidden]="password.valid || password.untouched" class="alert alert-danger">Password incorrect</div>
       </div>
       <div class="buttons" *ngIf = "!changeDataUser">
-        <button (click)="addUser(myForm)" type="button" class="btn btn-success">Зареєструватися</button>
         <button (click)="toCheckIn(myForm)" type="button" class="btn btn-danger">Увійти</button>
+        <button (click)="addUser(myForm)" type="button" class="btn btn-success">Зареєструватися</button>
       </div>
       <div class="buttons" *ngIf = "changeDataUser">
         <button (click)="editUser(myForm)" type="button" class="btn btn-success">Змінити</button>

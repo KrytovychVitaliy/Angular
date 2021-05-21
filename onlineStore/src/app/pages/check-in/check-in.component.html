@@ -24,8 +24,8 @@
           <div [hidden]="password.valid || password.untouched" class="alert alert-danger">Password incorrect</div>
       </div>
       <div class="button">
-        <button (click)="checkUser(myFormCheck)" type="button" class="btn btn-success">Увійти</button>
         <button (click)="signIn()" type="button" class="btn btn-danger">Реєстрація</button>
+        <button (click)="checkUser(myFormCheck)" type="button" class="btn btn-success">Увійти</button>
       </div>
 
       <p *ngIf="passwordError" class="err">Ви ввели неправильний пароль - cпробуйте ще раз</p>

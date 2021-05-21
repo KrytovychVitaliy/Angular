@@ -4,8 +4,22 @@
     .dropdown-toggle#button-basic{
       height: 25px;
       padding: 0;
+      box-shadow: none;
     }
   }
+
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: var(--header-button-active);
+    color: var(--link);
+  }
+  a{
+    font-weight: bolder;
+    color: var(--a);
+    &:hover{
+      color: var(--a-hover);
+    }
+  }
+
   height: 70px;
   background-color: var(--header-background);
   display: flex;
@@ -23,12 +37,32 @@
   .user {
     font-style: italic;
     font-weight: bold;
-    border: 1px solid rgb(0, 153, 255);
+    border: 1px solid var(--link);
     margin: 0 5px;
+  }
+  .btn-primary {
+    color: var(--link);
+    background-color: var(--header-background);
+    border-color: var(--link);
+    box-shadow: none;
+  }
+  a.dropdown-item {
+    font-weight: normal;
+    color: var(--link);
+    background-color: transparent;
+    &:hover{
+      background-color: var(--a-dropdown-hover);
+    }
+  }
+  a.dropdown-item.active {
+    background-color: var(--header-button-active);
+    &:hover{
+      background-color: var(--a-dropdown-hover);
+    }
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 650px) {
   .header {
     .bigHeader {
       display: none;

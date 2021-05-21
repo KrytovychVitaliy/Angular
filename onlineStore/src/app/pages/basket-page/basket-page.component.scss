@@ -10,6 +10,8 @@ section{
       margin-top: 20px;
       a{
         font-size: 14px;
+        color: rgb(212, 199, 6);
+        text-decoration: underline;
       }
     }
   }
@@ -83,6 +85,31 @@ section{
   .full{
     width: 600px;
     height: 600px;
+  }
+
+  .btn-warning {
+    color: #fff;
+    background-color: var(--link);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      border: none;
+      box-shadow: 0 0 5px var(--link);
+      }
+    &:active{
+      background-color: var(--body-background);
+    }
+  }
+  .btn-success {
+    background-color: var(--header-background);
+    border: none;
+    box-shadow: none;
+    &:hover{
+      border: none;
+      }
+    &:active{
+      background-color: var(--body-background);
+    }
   }
 }
 

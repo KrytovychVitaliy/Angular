@@ -15,9 +15,12 @@
             <td>{{ i + 1 }}</td>
             <td class="img"><img [src]="product[1].image"/></td>
             <td>{{ product[1].nameUA }}</td>
-            <td>{{ product[1].price }} грн.</td>
+            <td>{{ product[1].price }} ₴</td>
             <td>{{ product[1].count }}</td>
-            <td>{{ product[1].count * product[1].price }} грн.</td>
+            <td>{{ product[1].count * product[1].price }} ₴</td>
+          </tr>
+          <tr class="deliveryAddress">
+            <td colspan="6">{{ order[1].deliveryAddress }}</td>
           </tr>
           <tr class="info">
             <td colspan="2">order №{{ ind + 1 }}</td>
