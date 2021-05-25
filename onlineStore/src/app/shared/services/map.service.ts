@@ -5,7 +5,7 @@ import { ConstantsService } from './constants.service';
   providedIn: 'root'
 })
 export class MapService {
-  apiKey = 'AIzaSyCM2nK5YCFFnH2EXrXQdgiS5aygJDOkNYg';
+  apiKey = '';
   mapLocation = { lat: 49.84178857391628, lng: 	24.031238169561295 } //пл.Ринок, 1
 
   sector1 = [ //прямокутник 1

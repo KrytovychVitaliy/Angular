@@ -2821,7 +2821,7 @@ __webpack_require__.r(__webpack_exports__);
 class MapService {
     constructor(constantsService) {
         this.constantsService = constantsService;
-        this.apiKey = 'AIzaSyCM2nK5YCFFnH2EXrXQdgiS5aygJDOkNYg';
+        this.apiKey = '';
         this.mapLocation = { lat: 49.84178857391628, lng: 24.031238169561295 }; //пл.Ринок, 1
         this.sector1 = [
             { lat: 49.844575, lng: 24.026266 },
